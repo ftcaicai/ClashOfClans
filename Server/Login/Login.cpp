@@ -60,6 +60,8 @@ int main (void){
 	
 	ProcessRakNetMessage(peer);
 
+	peer->Shutdown(300);
+
 	RakPeerInterface::DestroyInstance(peer);
 
 	return 0;

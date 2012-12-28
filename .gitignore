@@ -161,3 +161,12 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+#################
+## Unity3d
+#################
+
+# cache folder
+Unity3dClient/Library
+Unity3dClient/ProjectSettings
+Unity3dClient/Temp
