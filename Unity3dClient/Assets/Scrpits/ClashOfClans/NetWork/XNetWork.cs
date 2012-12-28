@@ -126,6 +126,7 @@ public class XNetWork : System.IDisposable {
 				(byte)DefaultMessageIDTypes.ID_DISCONNECTION_NOTIFICATION, 
 				(data)=>{ OnDisconnectedFromServer (XNetworkDisconnection.Disconnected); }
 			); 
+			
 		}
 	}
 			

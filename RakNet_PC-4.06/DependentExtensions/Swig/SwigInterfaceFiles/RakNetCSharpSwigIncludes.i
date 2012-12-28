@@ -65,6 +65,9 @@
 //%include "RakNetTransport2.h"
 //%include "RoomsPlugin.h"\
 
+// FtLover Add at 2012-12-29 01:00:26
+%include "FT_ConnectProcess.h"
+
 #ifdef SWIG_ADDITIONAL_SQL_LITE
 	%include "SQLite3PluginCommon.h"
 	%include "SQLite3ClientPlugin.h"

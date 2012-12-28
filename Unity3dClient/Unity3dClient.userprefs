@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scrpits\ClashOfClans\NetWork\XNetWork2.cs">
+    <Files>
+      <File FileName="Assets\Scrpits\ClashOfClans\NetWork\XNetWork2.cs" Line="80" Column="32" />
+      <File FileName="Assets\Scrpits\Test\NetWork\XNetWorkTest.cs" Line="33" Column="2" />
+      <File FileName="Assets\Scrpits\ClashOfClans\NetWork\XNetWork.cs" Line="5" Column="1" />
+      <File FileName="Assets\Scrpits\RakNetSource\FT_ConnectProcessResultHandler.cs" Line="14" Column="14" />
+      <File FileName="Assets\Scrpits\RakNetSource\FT_ConnectProcessResultHandlerTest.cs" Line="21" Column="71" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

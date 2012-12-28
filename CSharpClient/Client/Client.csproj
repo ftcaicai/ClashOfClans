@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{459245D2-E8BF-4AA1-BF6E-0ED59A9F7D93}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SwigCSharpOutput\AddressOrGUID.cs" />
+    <Compile Include="SwigCSharpOutput\BitStream.cs" />
+    <Compile Include="SwigCSharpOutput\ByteQueue.cs" />
+    <Compile Include="SwigCSharpOutput\Cell.cs" />
+    <Compile Include="SwigCSharpOutput\ColumnDescriptor.cs" />
+    <Compile Include="SwigCSharpOutput\CommandParserInterface.cs" />
+    <Compile Include="SwigCSharpOutput\ConnectionAttemptResult.cs" />
+    <Compile Include="SwigCSharpOutput\ConnectionGraph2.cs" />
+    <Compile Include="SwigCSharpOutput\ConnectionState.cs" />
+    <Compile Include="SwigCSharpOutput\DefaultMessageIDTypes.cs" />
+    <Compile Include="SwigCSharpOutput\DirectoryDeltaTransfer.cs" />
+    <Compile Include="SwigCSharpOutput\DownloadCompleteStruct.cs" />
+    <Compile Include="SwigCSharpOutput\FileList.cs" />
+    <Compile Include="SwigCSharpOutput\FileListNode.cs" />
+    <Compile Include="SwigCSharpOutput\FileListNodeContext.cs" />
+    <Compile Include="SwigCSharpOutput\FileListProgress.cs" />
+    <Compile Include="SwigCSharpOutput\FileListTransfer.cs" />
+    <Compile Include="SwigCSharpOutput\FileListTransferCBInterface.cs" />
+    <Compile Include="SwigCSharpOutput\FileProgressStruct.cs" />
+    <Compile Include="SwigCSharpOutput\FilterQuery.cs" />
+    <Compile Include="SwigCSharpOutput\FLP_Printf.cs" />
+    <Compile Include="SwigCSharpOutput\FT_ConnectProcess.cs" />
+    <Compile Include="SwigCSharpOutput\FT_ConnectProcessResultHandler.cs" />
+    <Compile Include="SwigCSharpOutput\FT_ConnectProcessResultHandlerTest.cs" />
+    <Compile Include="SwigCSharpOutput\FullyConnectedMesh2.cs" />
+    <Compile Include="SwigCSharpOutput\IncrementalReadInterface.cs" />
+    <Compile Include="SwigCSharpOutput\JoinTeamType.cs" />
+    <Compile Include="SwigCSharpOutput\LogCommandParser.cs" />
+    <Compile Include="SwigCSharpOutput\MessageFilter.cs" />
+    <Compile Include="SwigCSharpOutput\MultilistType.cs" />
+    <Compile Include="SwigCSharpOutput\NatPunchthroughClient.cs" />
+    <Compile Include="SwigCSharpOutput\NatPunchthroughDebugInterface.cs" />
+    <Compile Include="SwigCSharpOutput\NatPunchthroughDebugInterface_PacketLogger.cs" />
+    <Compile Include="SwigCSharpOutput\NatPunchthroughDebugInterface_Printf.cs" />
+    <Compile Include="SwigCSharpOutput\NatPunchthroughServer.cs" />
+    <Compile Include="SwigCSharpOutput\NatPunchthroughServerDebugInterface.cs" />
+    <Compile Include="SwigCSharpOutput\NatPunchthroughServerDebugInterface_PacketLogger.cs" />
+    <Compile Include="SwigCSharpOutput\NatPunchthroughServerDebugInterface_Printf.cs" />
+    <Compile Include="SwigCSharpOutput\NatTypeDetectionClient.cs" />
+    <Compile Include="SwigCSharpOutput\NatTypeDetectionServer.cs" />
+    <Compile Include="SwigCSharpOutput\NetworkIDManager.cs" />
+    <Compile Include="SwigCSharpOutput\NetworkIDObject.cs" />
+    <Compile Include="SwigCSharpOutput\OnFileStruct.cs" />
+    <Compile Include="SwigCSharpOutput\OutOfBandIdentifiers.cs" />
+    <Compile Include="SwigCSharpOutput\Packet.cs" />
+    <Compile Include="SwigCSharpOutput\PacketConsoleLogger.cs" />
+    <Compile Include="SwigCSharpOutput\PacketFileLogger.cs" />
+    <Compile Include="SwigCSharpOutput\PacketLogger.cs" />
+    <Compile Include="SwigCSharpOutput\PacketPriority.cs" />
+    <Compile Include="SwigCSharpOutput\PacketReliability.cs" />
+    <Compile Include="SwigCSharpOutput\PluginInterface2.cs" />
+    <Compile Include="SwigCSharpOutput\PluginReceiveResult.cs" />
+    <Compile Include="SwigCSharpOutput\PublicKey.cs" />
+    <Compile Include="SwigCSharpOutput\PublicKeyMode.cs" />
+    <Compile Include="SwigCSharpOutput\PunchthroughConfiguration.cs" />
+    <Compile Include="SwigCSharpOutput\RakNet.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetBPlusTreeRow.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetGUID.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetListCell.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetListCellPointer.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetListColumnDescriptor.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetListFileListNode.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetListFilterQuery.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetListRakNetGUID.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetListRakString.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetListSortQuery.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetListSystemAddress.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetListTableRow.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetListUnsignedInt.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetListUnsignedShort.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetPageRow.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetPINVOKE.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetSocket.cs" />
+    <Compile Include="SwigCSharpOutput\RakNetStatistics.cs" />
+    <Compile Include="SwigCSharpOutput\RakPeer.cs" />
+    <Compile Include="SwigCSharpOutput\RakPeerInterface.cs" />
+    <Compile Include="SwigCSharpOutput\RakString.cs" />
+    <Compile Include="SwigCSharpOutput\ReadyEvent.cs" />
+    <Compile Include="SwigCSharpOutput\ReadyEventSystemStatus.cs" />
+    <Compile Include="SwigCSharpOutput\RemoteSystemIndex.cs" />
+    <Compile Include="SwigCSharpOutput\RNSPerSecondMetrics.cs" />
+    <Compile Include="SwigCSharpOutput\Router2.cs" />
+    <Compile Include="SwigCSharpOutput\Router2DebugInterface.cs" />
+    <Compile Include="SwigCSharpOutput\Row.cs" />
+    <Compile Include="SwigCSharpOutput\SimpleMutex.cs" />
+    <Compile Include="SwigCSharpOutput\SocketDescriptor.cs" />
+    <Compile Include="SwigCSharpOutput\SortQuery.cs" />
+    <Compile Include="SwigCSharpOutput\StartupResult.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_bool.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_DataStructures__ListT_RakNet__TM_TeamMember_p_t.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_DataStructures__ListT_RakNet__TM_Team_p_t.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_double.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_p_RakNet__TM_Team.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_p_RakNet__TM_TeamMember.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_p_RakNet__TM_World.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_RakNet__TM_World__JoinRequestHelper.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_unsigned_char.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_unsigned_int.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_unsigned_long_long.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_unsigned_short.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_void.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_wchar_t.cs" />
+    <Compile Include="SwigCSharpOutput\SystemAddress.cs" />
+    <Compile Include="SwigCSharpOutput\Table.cs" />
+    <Compile Include="SwigCSharpOutput\TeamManager.cs" />
+    <Compile Include="SwigCSharpOutput\TeamSelection.cs" />
+    <Compile Include="SwigCSharpOutput\ThreadsafePacketLogger.cs" />
+    <Compile Include="SwigCSharpOutput\TMTopology.cs" />
+    <Compile Include="SwigCSharpOutput\TM_Team.cs" />
+    <Compile Include="SwigCSharpOutput\TM_TeamMember.cs" />
+    <Compile Include="SwigCSharpOutput\TM_World.cs" />
+    <Compile Include="SwigCSharpOutput\TransportInterface.cs" />
+    <Compile Include="SwigCSharpOutput\UDPForwarder.cs" />
+    <Compile Include="SwigCSharpOutput\UDPForwarderResult.cs" />
+    <Compile Include="SwigCSharpOutput\UDPProxyClient.cs" />
+    <Compile Include="SwigCSharpOutput\UDPProxyClientResultHandler.cs" />
+    <Compile Include="SwigCSharpOutput\UDPProxyCoordinator.cs" />
+    <Compile Include="SwigCSharpOutput\UDPProxyServer.cs" />
+    <Compile Include="SwigCSharpOutput\UDPProxyServerResultHandler.cs" />
+    <Compile Include="SwigCSharpOutput\uint24_t.cs" />
+    <Compile Include="SwigCSharpOutput\UnsignedIntPointer.cs" />
+    <Compile Include="SwigCSharpOutput\UnsignedShortPointer.cs" />
+    <Compile Include="XNetWork2.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

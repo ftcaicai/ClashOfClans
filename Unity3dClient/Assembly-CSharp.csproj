@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{68F40550-951A-AD0F-AEE1-F325CA35D3C2}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE;ENABLE_MICROPHONE;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;ENABLE_AUDIO_FMOD;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PHYSICS;ENABLE_TERRAIN;ENABLE_CACHING;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_CLOTH;ENABLE_MOVIES;ENABLE_AUDIO;ENABLE_WWW;ENABLE_SHADOWS;ENABLE_DUCK_TYPING;UNITY_4_0_0;UNITY_4_0;UNITY_STANDALONE_WIN;ENABLE_PROFILER;UNITY_EDITOR;UNITY_TEAM_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Scrpits\ClashOfClans\NetWork\XNetWork.cs" />
+     <Compile Include="Assets\Scrpits\ClashOfClans\NetWork\XNetWork2.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\AddressOrGUID.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\BitStream.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\ByteQueue.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\Cell.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\ColumnDescriptor.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\CommandParserInterface.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\ConnectionAttemptResult.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\ConnectionGraph2.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\ConnectionState.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\DefaultMessageIDTypes.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\DirectoryDeltaTransfer.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\DownloadCompleteStruct.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FLP_Printf.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FT_ConnectProcess.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FT_ConnectProcessResultHandler.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FT_ConnectProcessResultHandlerTest.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FileList.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FileListNode.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FileListNodeContext.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FileListProgress.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FileListTransfer.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FileListTransferCBInterface.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FileProgressStruct.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FilterQuery.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\FullyConnectedMesh2.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\IncrementalReadInterface.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\JoinTeamType.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\LogCommandParser.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\MessageFilter.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\MultilistType.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\NatPunchthroughClient.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\NatPunchthroughDebugInterface.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\NatPunchthroughDebugInterface_PacketLogger.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\NatPunchthroughDebugInterface_Printf.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\NatPunchthroughServer.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\NatPunchthroughServerDebugInterface.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\NatPunchthroughServerDebugInterface_PacketLogger.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\NatPunchthroughServerDebugInterface_Printf.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\NatTypeDetectionClient.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\NatTypeDetectionServer.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\NetworkIDManager.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\NetworkIDObject.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\OnFileStruct.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\OutOfBandIdentifiers.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\Packet.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\PacketConsoleLogger.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\PacketFileLogger.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\PacketLogger.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\PacketPriority.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\PacketReliability.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\PluginInterface2.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\PluginReceiveResult.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\PublicKey.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\PublicKeyMode.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\PunchthroughConfiguration.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RNSPerSecondMetrics.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNet.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetBPlusTreeRow.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetGUID.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetListCell.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetListCellPointer.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetListColumnDescriptor.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetListFileListNode.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetListFilterQuery.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetListRakNetGUID.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetListRakString.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetListSortQuery.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetListSystemAddress.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetListTableRow.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetListUnsignedInt.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetListUnsignedShort.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetPINVOKE.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetPageRow.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetSocket.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakNetStatistics.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakPeer.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakPeerInterface.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RakString.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\ReadyEvent.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\ReadyEventSystemStatus.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\RemoteSystemIndex.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\Router2.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\Router2DebugInterface.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\Row.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_DataStructures__ListT_RakNet__TM_TeamMember_p_t.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_DataStructures__ListT_RakNet__TM_Team_p_t.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_RakNet__TM_World__JoinRequestHelper.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_bool.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_double.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_p_RakNet__TM_Team.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_p_RakNet__TM_TeamMember.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_p_RakNet__TM_World.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_unsigned_char.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_unsigned_int.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_unsigned_long_long.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_unsigned_short.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_void.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SWIGTYPE_p_wchar_t.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SimpleMutex.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SocketDescriptor.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SortQuery.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\StartupResult.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\SystemAddress.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\TMTopology.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\TM_Team.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\TM_TeamMember.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\TM_World.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\Table.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\TeamManager.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\TeamSelection.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\ThreadsafePacketLogger.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\TransportInterface.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\UDPForwarder.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\UDPForwarderResult.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\UDPProxyClient.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\UDPProxyClientResultHandler.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\UDPProxyCoordinator.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\UDPProxyServer.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\UDPProxyServerResultHandler.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\UnsignedIntPointer.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\UnsignedShortPointer.cs" />
+     <Compile Include="Assets\Scrpits\RakNetSource\uint24_t.cs" />
+     <Compile Include="Assets\Scrpits\Test\NetWork\XNetWorkTest.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

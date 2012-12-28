@@ -9,3 +9,4 @@ mkdir "../SwigWindowsCSharpSample\SwigTestApp\bin\X86\Release"
 :SKIPMAKEOUTDIR
 copy /Y "Release\RakNet.dll"  "../SwigWindowsCSharpSample\SwigTestApp\bin\X86\Release\RakNet.dll"
 copy /Y "../SwigOutput\SwigCSharpOutput\*.cs" "../SwigWindowsCSharpSample\SwigTestApp\SwigFiles\"
+copy /Y "Release\RakNet.dll" "..\..\..\..\Unity3dClient\Assets\Plugins\RakNet.dll"

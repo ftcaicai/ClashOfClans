@@ -14,6 +14,9 @@ GOTO ENDSWIG
 :NOSQL
 %swigPath%swig -c++ -csharp -namespace RakNet -I"%1" -I"SwigInterfaceFiles" -outdir SwigOutput\SwigCSharpOutput -o SwigOutput\CplusDLLIncludes\RakNet_wrap.cxx SwigInterfaceFiles\RakNet.i
 copy /Y SwigOutput\SwigCSharpOutput\* SwigWindowsCSharpSample\SwigTestApp\SwigFiles\*
+del /F /Q ..\..\..\Unity3dClient\Assets\Scrpits\RakNetSource\*
+copy /Y SwigOutput\SwigCSharpOutput\* ..\..\..\Unity3dClient\Assets\Scrpits\RakNetSource\*
+del /F /Q ..\..\..\Unity3dClient\Assets\Plugins\RakNet.dll
 :ENDSWIG
 if errorlevel 1 GOTO :SWIGERROR
 echo Swig build complete

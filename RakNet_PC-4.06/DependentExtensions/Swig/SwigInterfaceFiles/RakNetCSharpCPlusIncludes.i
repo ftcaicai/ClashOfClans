@@ -84,6 +84,10 @@ typedef unsigned int SOCKET;
 #include "GetTime.h"
 //#include "RakNetTransport2.h"
 //#include "RoomsPlugin.h"
+
+// FtLover Add at 2012-12-29 01:00:26
+#include "FT_ConnectProcess.h"
+
 //Macros
 //Swig C++ code only TypeDefs
 //Most of these are nested structs/classes that swig needs to understand as global
