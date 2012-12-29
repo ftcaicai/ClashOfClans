@@ -1,5 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autopatcher", "Autopatcher", "{82B9C30B-4865-4402-BAF2-D3A40A963216}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal Tests", "Internal Tests", "{DC38EF61-0EFD-466D-8045-B0A218A55D93}"
@@ -46,354 +46,151 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Steam_Backend", "Steam_Back
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scaleform", "Scaleform", "{845008A6-1271-4B6D-96F9-AAB40BA1E2FC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL", "Lib\DLL\DLL_vc9.vcproj", "{BC75CD23-CB75-4233-A305-B7328825A9A5}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibStatic", "Lib\LibStatic\LibStatic_vc9.vcproj", "{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ping", "Samples\Ping\Ping_vc9.vcproj", "{A6394A1F-8F49-4492-B1F0-15EAD0F3D9BB}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RakVoice", "Samples\RakVoice\RakVoice_vc9.vcproj", "{25A096E0-645B-4852-913B-400E1C79388E}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Timestamping", "Samples\Timestamping\Timestamping_vc9.vcproj", "{F0B736A1-3A14-429B-A1DD-5BB9FC8620BA}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Encryption", "Samples\Encryption\Encryption_vc9.vcproj", "{96CA4898-F276-4BF3-9FE0-07CDA5D8321F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FlowControlTest", "Samples\Flow Control Test\FlowControlTest_vc9.vcproj", "{83BECB19-C13D-424F-AFF9-4C353D14269A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DroppedConnectionTest", "Samples\Dropped Connection Test\DroppedConnectionTest_vc9.vcproj", "{1B2F9B70-FFC0-446D-994E-7DC4E874B112}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoopbackPerformanceTest", "Samples\LoopbackPerformanceTest\LoopbackPerformanceTest_vc9.vcproj", "{831362FA-6E71-40C5-AA2F-AAC8DE33FAF4}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LANServerDiscovery", "Samples\LANServerDiscovery\LANServerDiscovery_vc9.vcproj", "{27A95347-2BFC-4EC0-BF1C-D4B66F82302F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReliableOrderedTest", "Samples\Reliable Ordered Test\ReliableOrderedTest_vc9.vcproj", "{1B7FBE52-9B1B-4203-9D8E-AD7C821E3ADB}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FullyConnectedMesh", "Samples\Fully Connected Mesh\FullyConnectedMesh_vc9.vcproj", "{3C02D25B-FEBC-4CE3-B671-8902EA109ECC}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BigPacketTest", "Samples\BigPacketTest\BigPacketTest_vc9.vcproj", "{5B38727A-2D86-4235-907D-37A1530392FA}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OfflineMessagesTest", "Samples\OfflineMessagesTest\OfflineMessagesTest_vc9.vcproj", "{D58C47D6-EC1B-4B97-A8F7-79A670935011}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ComprehensiveTest", "Samples\ComprehensiveTest\ComprehensiveTest_vc9.vcproj", "{0360AC80-FD37-42D8-9141-B94B5C99B214}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PacketLoggerTest", "Samples\PacketLogger\PacketLoggerTest_vc9.vcproj", "{CE4B288E-4455-411D-BA9D-00D6AFE0B8C8}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommandConsoleServer", "Samples\CommandConsoleServer\CommandConsoleServer_vc9.vcproj", "{FAAEA8C7-DB88-4EF2-A78B-2A429283190B}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommandConsoleClient", "Samples\CommandConsoleClient\CommandConsoleClient_vc9.vcproj", "{7F848364-AE8B-46CD-B422-F5E7B86C437E}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestDLL", "Samples\TestDLL\TestDLL_vc9.vcproj", "{6E58C3CC-5323-4C29-9AA0-AFF0C627DB04}"
-	ProjectSection(ProjectDependencies) = postProject
-		{BC75CD23-CB75-4233-A305-B7328825A9A5} = {BC75CD23-CB75-4233-A305-B7328825A9A5}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrossConnectionTest", "Samples\CrossConnectionTest\CrossConnectionTest_vc9.vcproj", "{7F2EDC16-718B-4C88-A50F-A0334791C3E1}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThreadTest", "Samples\ThreadTest\ThreadTest_vc9.vcproj", "{CCBEEB8B-9415-4C5A-8617-A3BEFC2DDF43}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectoryDeltaTransfer", "Samples\DirectoryDeltaTransfer\DirectoryDeltaTransfer_vc9.vcproj", "{BC349AD2-94A3-4D99-BFD1-02ED5D3F103E}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherClientRestarter", "Samples\AutopatcherClientRestarter\AutopatcherClientRestarter_vc9.vcproj", "{D1BEED3B-4E09-4D77-9C15-55F596617F43}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherPostgreSQLRepository", "DependentExtensions\Autopatcher\AutopatcherPostgreRepository\AutopatcherPostgreRepository_vc9.vcproj", "{0FD54BD0-C49C-4681-80CE-AA22B8995CA8}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherClient", "Samples\AutopatcherClient\AutopatcherClient_vc9.vcproj", "{0D0A2B9B-1423-484A-8A40-9E67FD72BD4F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherServer_PostgreSQL", "Samples\AutopatcherServer\AutopatcherServer_vc9.vcproj", "{4BDF263B-655B-4F1D-B42F-65260DC688A6}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-		{0FD54BD0-C49C-4681-80CE-AA22B8995CA8} = {0FD54BD0-C49C-4681-80CE-AA22B8995CA8}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrashReporter", "Samples\CrashReporter\CrashReporter_vc9.vcproj", "{F1DC7171-0188-492F-9FC3-733B285836D2}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SendEmail", "Samples\SendEmail\SendEmail_vc9.vcproj", "{9D957691-9B0F-4714-9D62-4E52384F64A4}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chat Example Client", "Samples\Chat Example\Chat Example Client_vc9.vcproj", "{6DC7ADD5-3506-4922-83C8-192196B1FA2C}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chat Example Server", "Samples\Chat Example\Chat Example Server_vc9.vcproj", "{B66086C8-4EBC-42F0-8E8D-AA6D5005B94D}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MessageFilter", "Samples\MessageFilter\MessageFilter_vc9.vcproj", "{FF9A2D64-8C8A-4DF8-BBEB-36C262BEA71F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RakVoiceFMOD", "Samples\RakVoiceFMOD\RakVoiceFMOD_vc9.vcproj", "{3B5312CD-11FB-4E0D-A0F9-68B63765082F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ogre3DInterpDemo", "DependentExtensions\Ogre3DInterpDemo\Ogre3DInterpDemo.vcproj", "{FA98E1BC-2724-4BBA-8A2C-D8E27313638B}"
-	ProjectSection(ProjectDependencies) = postProject
-		{BC75CD23-CB75-4233-A305-B7328825A9A5} = {BC75CD23-CB75-4233-A305-B7328825A9A5}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RakVoiceDSound", "Samples\RakVoiceDSound\RakVoiceDSound_vc9.vcproj", "{CC15F4DA-8B51-4A97-9E30-B44DDC966565}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherServer_MySQL", "Samples\AutoPatcherServer_MySQL\AutopatcherServer_MySQL.vcproj", "{01A7ED79-2098-4BB5-B5A0-8293210BCB93}"
-	ProjectSection(ProjectDependencies) = postProject
-		{9092C339-3CCA-41B4-8B80-FAED313D4168} = {9092C339-3CCA-41B4-8B80-FAED313D4168}
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherMySQLRepository", "DependentExtensions\Autopatcher\AutopatcherMySQLRepository\AutopatcherMySQLRepository.vcproj", "{9092C339-3CCA-41B4-8B80-FAED313D4168}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RPC3", "Samples\RPC3\RPC3.vcproj", "{8852F1C1-99FF-4E40-9119-D2DE3B8CC162}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileListTransfer", "Samples\FileListTransfer\FileListTransfer.vcproj", "{E358EC64-EDCD-4981-AFF8-FA208D1487E2}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RoomsPlugin", "Samples\Rooms\Rooms.vcproj", "{1C145911-F5BF-4D71-B9BE-FEEBCF9F16FA}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lobby2Server_PGSQL", "Samples\Lobby2Server_PGSQL\Lobby2Server_PGSQL.vcproj", "{0F5279B1-E16F-4FC3-982B-FB81A1E245A3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lobby2Client", "Samples\Lobby2Client\Lobby2Client.vcproj", "{B3944CE3-8DF6-4D51-9B8D-459C74932E97}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UDPForwarderTest", "Samples\UDPForwarder\UDPForwarder.vcproj", "{E3420143-65D6-4983-8C72-A919A54DF1D6}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReplicaManager3", "Samples\ReplicaManager3\ReplicaManager3.vcproj", "{DDB05460-44AD-48E5-A0DF-2F267B8BAEB9}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IrrlichtDemo", "DependentExtensions\IrrlichtDemo\IrrlichtDemo.v8.vcproj", "{DEDB9D76-00E6-4230-8612-0B5AC0F3D5E8}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQLite3Plugin", "DependentExtensions\SQLite3Plugin\SQLite3Plugin.vcproj", "{AB742113-15EC-4B5C-B95D-555BA034F704}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherClientGFx3", "Samples\AutopatcherClientGFx3.0\AutopatcherClientGFx3.0_vc9.vcproj", "{5BCE2D70-53B4-42F9-ABFE-1BC26E59C4FD}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FCM2Host", "Samples\FCMHost\FCM2Host.vcproj", "{64EEE2EC-DF4C-4B9A-9C6E-1995C49ADD11}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PHPDirectoryServer2", "Samples\PHPDirectoryServer2\PHPDirectoryServer2.vcproj", "{0BC48323-6B49-4B29-9961-044BB129F827}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Matrices", "DependentExtensions\SQLite3Plugin\Logger\ClientOnly\Samples\D3D9\Matrices_2008.vcproj", "{D3D09003-96D0-4629-88B8-122C0256058C}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQLiteClientLogger", "DependentExtensions\SQLite3Plugin\Logger\ClientOnly\Samples\Simple\SQLiteClientLogger.vcproj", "{62DCF9E0-63A5-40AD-9A57-324303C3224C}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQLiteServerLogger", "DependentExtensions\SQLite3Plugin\Logger\ServerOnly\SQLiteServerLogger.vcproj", "{E0B645F2-CDE7-4C1B-A0E2-A0457DCCD0E3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demo_BspCollision", "DependentExtensions\SQLite3Plugin\Logger\ClientOnly\Samples\Ogre3D\BspCollision_vc9.vcproj", "{1982C73F-3D1C-46A6-9DFB-C7B03310365B}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServerClientTest2", "Samples\ServerClientTest2\ServerClientTest2_vc9.vcproj", "{4533A6E8-8EA3-4ACF-B97C-ECCA2DD22487}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FCM2HostSimultaneous", "Samples\FCMHostSimultaneous\FCM2HostSimultaneous.vcproj", "{0BF7A22B-D0E3-43AB-B117-671432505A80}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MessageSizeTest", "Samples\MessageSizeTest\MessageSizeTest_vc9.vcproj", "{80473F60-A149-46B5-AC53-3B7788D897B5}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Router2", "Samples\Router2\Router2_vc9.vcproj", "{E816B863-ACCD-4516-8A4A-DFEE2B321605}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TeamManager", "Samples\TeamManager\TeamManager_vc9.vcproj", "{D2DB51AA-1589-4265-8EB2-57833730A1DE}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NATCompleteServer", "Samples\NATCompleteServer\NATCompleteServer.vcproj", "{7B6311A8-EF51-448C-97EB-07C8A1C8500F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NATCompleteClient", "Samples\NATCompleteClient\NATCompleteClient.vcproj", "{F825FBD1-E87F-4F8A-8275-84544FF0A29D}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SteamLobby", "Samples\SteamLobby\SteamLobby.vcproj", "{369194AC-BF69-4621-A489-B1FB4F509506}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RPC4", "Samples\RPC4\RPC4.vcproj", "{6EA9995C-77BE-4E61-BCF0-7956190B75C5}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lobby2ClientGFx3", "Samples\Lobby2ClientGFx3.0\Lobby2ClientGFx3.0.vcproj", "{3F538D51-F9F2-41AD-B7F3-B9A22FE9FDA6}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RoomsBrowserGFx3_RakNet", "Samples\RoomsBrowserGFx3\RakNet\RoomsBrowserGFx3_RakNet.vcproj", "{1E7A1DCE-807E-474B-B065-14F8C93A1D6C}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TwoWayAuthentication", "Samples\TwoWayAuthentication\TwoWayAuthentication.vcproj", "{F860F6E8-5B0F-4892-99B3-69E5CDA1102A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CloudTest", "Samples\CloudTest\CloudTest_vc9.vcproj", "{1B94D21B-D47B-417F-A204-4B3C6FCD9A34}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CloudServer", "Samples\CloudServer\CloudServer_vc9.vcproj", "{AC5D8934-E93C-492E-BEF4-16EEA03E0AC3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CloudClient", "Samples\CloudClient\CloudClient_vc9.vcproj", "{0CDCA369-127B-4983-9192-39D8368BD71F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RackspaceConsole", "Samples\RackspaceConsole\RackspaceConsole_vc9.vcproj", "{8C39111A-C201-4609-BF5D-3006336AD536}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BurstTest", "Samples\BurstTest\BurstTest_vc9.vcproj", "{983A44EA-1BC8-4C0F-A8C3-9D340E2CA193}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReadyEvent", "Samples\ReadyEvent\ReadyEvent_vc9.vcproj", "{4F4774E8-C7C4-4F1B-A2BB-B8208F992904}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ComprehensivePCGame", "Samples\ComprehensivePCGame\ComprehensivePCGame_vc9.vcproj", "{71B2CBB9-6C2D-4823-88F3-1AE926BDD726}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FCM2VerifiedJoinSimultaneous", "Samples\FCMVerifiedJoinSimultaneous\FCM2VerifiedJoinSimultaneous.vcproj", "{8E964396-DD16-4A79-9791-BE7438A48E07}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StatisticsHistoryTest", "Samples\StatisticsHistoryTest\StatisticsHistoryTest_vc9.vcproj", "{29FD554B-379B-4A4C-8EB5-A78364809844}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063} = {6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL", "Lib\DLL\DLL_vc9.vcxproj", "{BC75CD23-CB75-4233-A305-B7328825A9A5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibStatic", "Lib\LibStatic\LibStatic_vc9.vcxproj", "{6533BDAE-0F0C-45E4-8FE7-ADD0F37FE063}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ping", "Samples\Ping\Ping_vc9.vcxproj", "{A6394A1F-8F49-4492-B1F0-15EAD0F3D9BB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RakVoice", "Samples\RakVoice\RakVoice_vc9.vcxproj", "{25A096E0-645B-4852-913B-400E1C79388E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Timestamping", "Samples\Timestamping\Timestamping_vc9.vcxproj", "{F0B736A1-3A14-429B-A1DD-5BB9FC8620BA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Encryption", "Samples\Encryption\Encryption_vc9.vcxproj", "{96CA4898-F276-4BF3-9FE0-07CDA5D8321F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FlowControlTest", "Samples\Flow Control Test\FlowControlTest_vc9.vcxproj", "{83BECB19-C13D-424F-AFF9-4C353D14269A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DroppedConnectionTest", "Samples\Dropped Connection Test\DroppedConnectionTest_vc9.vcxproj", "{1B2F9B70-FFC0-446D-994E-7DC4E874B112}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoopbackPerformanceTest", "Samples\LoopbackPerformanceTest\LoopbackPerformanceTest_vc9.vcxproj", "{831362FA-6E71-40C5-AA2F-AAC8DE33FAF4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LANServerDiscovery", "Samples\LANServerDiscovery\LANServerDiscovery_vc9.vcxproj", "{27A95347-2BFC-4EC0-BF1C-D4B66F82302F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReliableOrderedTest", "Samples\Reliable Ordered Test\ReliableOrderedTest_vc9.vcxproj", "{1B7FBE52-9B1B-4203-9D8E-AD7C821E3ADB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FullyConnectedMesh", "Samples\Fully Connected Mesh\FullyConnectedMesh_vc9.vcxproj", "{3C02D25B-FEBC-4CE3-B671-8902EA109ECC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BigPacketTest", "Samples\BigPacketTest\BigPacketTest_vc9.vcxproj", "{5B38727A-2D86-4235-907D-37A1530392FA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OfflineMessagesTest", "Samples\OfflineMessagesTest\OfflineMessagesTest_vc9.vcxproj", "{D58C47D6-EC1B-4B97-A8F7-79A670935011}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ComprehensiveTest", "Samples\ComprehensiveTest\ComprehensiveTest_vc9.vcxproj", "{0360AC80-FD37-42D8-9141-B94B5C99B214}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PacketLoggerTest", "Samples\PacketLogger\PacketLoggerTest_vc9.vcxproj", "{CE4B288E-4455-411D-BA9D-00D6AFE0B8C8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommandConsoleServer", "Samples\CommandConsoleServer\CommandConsoleServer_vc9.vcxproj", "{FAAEA8C7-DB88-4EF2-A78B-2A429283190B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommandConsoleClient", "Samples\CommandConsoleClient\CommandConsoleClient_vc9.vcxproj", "{7F848364-AE8B-46CD-B422-F5E7B86C437E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestDLL", "Samples\TestDLL\TestDLL_vc9.vcxproj", "{6E58C3CC-5323-4C29-9AA0-AFF0C627DB04}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrossConnectionTest", "Samples\CrossConnectionTest\CrossConnectionTest_vc9.vcxproj", "{7F2EDC16-718B-4C88-A50F-A0334791C3E1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThreadTest", "Samples\ThreadTest\ThreadTest_vc9.vcxproj", "{CCBEEB8B-9415-4C5A-8617-A3BEFC2DDF43}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectoryDeltaTransfer", "Samples\DirectoryDeltaTransfer\DirectoryDeltaTransfer_vc9.vcxproj", "{BC349AD2-94A3-4D99-BFD1-02ED5D3F103E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherClientRestarter", "Samples\AutopatcherClientRestarter\AutopatcherClientRestarter_vc9.vcxproj", "{D1BEED3B-4E09-4D77-9C15-55F596617F43}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherPostgreSQLRepository", "DependentExtensions\Autopatcher\AutopatcherPostgreRepository\AutopatcherPostgreRepository_vc9.vcxproj", "{0FD54BD0-C49C-4681-80CE-AA22B8995CA8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherClient", "Samples\AutopatcherClient\AutopatcherClient_vc9.vcxproj", "{0D0A2B9B-1423-484A-8A40-9E67FD72BD4F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherServer_PostgreSQL", "Samples\AutopatcherServer\AutopatcherServer_vc9.vcxproj", "{4BDF263B-655B-4F1D-B42F-65260DC688A6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrashReporter", "Samples\CrashReporter\CrashReporter_vc9.vcxproj", "{F1DC7171-0188-492F-9FC3-733B285836D2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SendEmail", "Samples\SendEmail\SendEmail_vc9.vcxproj", "{9D957691-9B0F-4714-9D62-4E52384F64A4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chat Example Client", "Samples\Chat Example\Chat Example Client_vc9.vcxproj", "{6DC7ADD5-3506-4922-83C8-192196B1FA2C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chat Example Server", "Samples\Chat Example\Chat Example Server_vc9.vcxproj", "{B66086C8-4EBC-42F0-8E8D-AA6D5005B94D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MessageFilter", "Samples\MessageFilter\MessageFilter_vc9.vcxproj", "{FF9A2D64-8C8A-4DF8-BBEB-36C262BEA71F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RakVoiceFMOD", "Samples\RakVoiceFMOD\RakVoiceFMOD_vc9.vcxproj", "{3B5312CD-11FB-4E0D-A0F9-68B63765082F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ogre3DInterpDemo", "DependentExtensions\Ogre3DInterpDemo\Ogre3DInterpDemo.vcxproj", "{FA98E1BC-2724-4BBA-8A2C-D8E27313638B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RakVoiceDSound", "Samples\RakVoiceDSound\RakVoiceDSound_vc9.vcxproj", "{CC15F4DA-8B51-4A97-9E30-B44DDC966565}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherServer_MySQL", "Samples\AutoPatcherServer_MySQL\AutopatcherServer_MySQL.vcxproj", "{01A7ED79-2098-4BB5-B5A0-8293210BCB93}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherMySQLRepository", "DependentExtensions\Autopatcher\AutopatcherMySQLRepository\AutopatcherMySQLRepository.vcxproj", "{9092C339-3CCA-41B4-8B80-FAED313D4168}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RPC3", "Samples\RPC3\RPC3.vcxproj", "{8852F1C1-99FF-4E40-9119-D2DE3B8CC162}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileListTransfer", "Samples\FileListTransfer\FileListTransfer.vcxproj", "{E358EC64-EDCD-4981-AFF8-FA208D1487E2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RoomsPlugin", "Samples\Rooms\Rooms.vcxproj", "{1C145911-F5BF-4D71-B9BE-FEEBCF9F16FA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lobby2Server_PGSQL", "Samples\Lobby2Server_PGSQL\Lobby2Server_PGSQL.vcxproj", "{0F5279B1-E16F-4FC3-982B-FB81A1E245A3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lobby2Client", "Samples\Lobby2Client\Lobby2Client.vcxproj", "{B3944CE3-8DF6-4D51-9B8D-459C74932E97}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UDPForwarderTest", "Samples\UDPForwarder\UDPForwarder.vcxproj", "{E3420143-65D6-4983-8C72-A919A54DF1D6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReplicaManager3", "Samples\ReplicaManager3\ReplicaManager3.vcxproj", "{DDB05460-44AD-48E5-A0DF-2F267B8BAEB9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IrrlichtDemo", "DependentExtensions\IrrlichtDemo\IrrlichtDemo.v8.vcxproj", "{DEDB9D76-00E6-4230-8612-0B5AC0F3D5E8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQLite3Plugin", "DependentExtensions\SQLite3Plugin\SQLite3Plugin.vcxproj", "{AB742113-15EC-4B5C-B95D-555BA034F704}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutopatcherClientGFx3", "Samples\AutopatcherClientGFx3.0\AutopatcherClientGFx3.0_vc9.vcxproj", "{5BCE2D70-53B4-42F9-ABFE-1BC26E59C4FD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FCM2Host", "Samples\FCMHost\FCM2Host.vcxproj", "{64EEE2EC-DF4C-4B9A-9C6E-1995C49ADD11}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PHPDirectoryServer2", "Samples\PHPDirectoryServer2\PHPDirectoryServer2.vcxproj", "{0BC48323-6B49-4B29-9961-044BB129F827}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Matrices", "DependentExtensions\SQLite3Plugin\Logger\ClientOnly\Samples\D3D9\Matrices_2008.vcxproj", "{D3D09003-96D0-4629-88B8-122C0256058C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQLiteClientLogger", "DependentExtensions\SQLite3Plugin\Logger\ClientOnly\Samples\Simple\SQLiteClientLogger.vcxproj", "{62DCF9E0-63A5-40AD-9A57-324303C3224C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQLiteServerLogger", "DependentExtensions\SQLite3Plugin\Logger\ServerOnly\SQLiteServerLogger.vcxproj", "{E0B645F2-CDE7-4C1B-A0E2-A0457DCCD0E3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demo_BspCollision", "DependentExtensions\SQLite3Plugin\Logger\ClientOnly\Samples\Ogre3D\BspCollision_vc9.vcxproj", "{1982C73F-3D1C-46A6-9DFB-C7B03310365B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServerClientTest2", "Samples\ServerClientTest2\ServerClientTest2_vc9.vcxproj", "{4533A6E8-8EA3-4ACF-B97C-ECCA2DD22487}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FCM2HostSimultaneous", "Samples\FCMHostSimultaneous\FCM2HostSimultaneous.vcxproj", "{0BF7A22B-D0E3-43AB-B117-671432505A80}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MessageSizeTest", "Samples\MessageSizeTest\MessageSizeTest_vc9.vcxproj", "{80473F60-A149-46B5-AC53-3B7788D897B5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Router2", "Samples\Router2\Router2_vc9.vcxproj", "{E816B863-ACCD-4516-8A4A-DFEE2B321605}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TeamManager", "Samples\TeamManager\TeamManager_vc9.vcxproj", "{D2DB51AA-1589-4265-8EB2-57833730A1DE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NATCompleteServer", "Samples\NATCompleteServer\NATCompleteServer.vcxproj", "{7B6311A8-EF51-448C-97EB-07C8A1C8500F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NATCompleteClient", "Samples\NATCompleteClient\NATCompleteClient.vcxproj", "{F825FBD1-E87F-4F8A-8275-84544FF0A29D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SteamLobby", "Samples\SteamLobby\SteamLobby.vcxproj", "{369194AC-BF69-4621-A489-B1FB4F509506}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RPC4", "Samples\RPC4\RPC4.vcxproj", "{6EA9995C-77BE-4E61-BCF0-7956190B75C5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lobby2ClientGFx3", "Samples\Lobby2ClientGFx3.0\Lobby2ClientGFx3.0.vcxproj", "{3F538D51-F9F2-41AD-B7F3-B9A22FE9FDA6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RoomsBrowserGFx3_RakNet", "Samples\RoomsBrowserGFx3\RakNet\RoomsBrowserGFx3_RakNet.vcxproj", "{1E7A1DCE-807E-474B-B065-14F8C93A1D6C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TwoWayAuthentication", "Samples\TwoWayAuthentication\TwoWayAuthentication.vcxproj", "{F860F6E8-5B0F-4892-99B3-69E5CDA1102A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CloudTest", "Samples\CloudTest\CloudTest_vc9.vcxproj", "{1B94D21B-D47B-417F-A204-4B3C6FCD9A34}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CloudServer", "Samples\CloudServer\CloudServer_vc9.vcxproj", "{AC5D8934-E93C-492E-BEF4-16EEA03E0AC3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CloudClient", "Samples\CloudClient\CloudClient_vc9.vcxproj", "{0CDCA369-127B-4983-9192-39D8368BD71F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RackspaceConsole", "Samples\RackspaceConsole\RackspaceConsole_vc9.vcxproj", "{8C39111A-C201-4609-BF5D-3006336AD536}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BurstTest", "Samples\BurstTest\BurstTest_vc9.vcxproj", "{983A44EA-1BC8-4C0F-A8C3-9D340E2CA193}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReadyEvent", "Samples\ReadyEvent\ReadyEvent_vc9.vcxproj", "{4F4774E8-C7C4-4F1B-A2BB-B8208F992904}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ComprehensivePCGame", "Samples\ComprehensivePCGame\ComprehensivePCGame_vc9.vcxproj", "{71B2CBB9-6C2D-4823-88F3-1AE926BDD726}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FCM2VerifiedJoinSimultaneous", "Samples\FCMVerifiedJoinSimultaneous\FCM2VerifiedJoinSimultaneous.vcxproj", "{8E964396-DD16-4A79-9791-BE7438A48E07}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StatisticsHistoryTest", "Samples\StatisticsHistoryTest\StatisticsHistoryTest_vc9.vcxproj", "{29FD554B-379B-4A4C-8EB5-A78364809844}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

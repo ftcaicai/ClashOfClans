@@ -1,7 +1,7 @@
 ClashOfClans 
 ==================
 
-ClashOfClans does design for Ipad/Iphone 3D Game.
+ClashOfClans is designed to run on the Ipad/Iphone/Android Game.
 It's server in C++, and client in Unity3d
 	
 Installation
