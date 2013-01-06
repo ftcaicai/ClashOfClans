@@ -167,12 +167,4 @@ pip-log.txt
 #################
 
 # cache folder
-Unity3dClient/Library
-Unity3dClient/ProjectSettings
-Unity3dClient/Temp
-Unity3dClient/Assembly-CSharp.csproj
-Unity3dClient/Assembly-CSharp.pidb
-Unity3dClient/Assembly-CSharp-vs.csproj
-Unity3dClient/Unity3dClient.sln
-Unity3dClient/Unity3dClient-csharp.sln
-Unity3dClient/*.*
+Unity3dClient
