@@ -57,10 +57,12 @@ int main (void){
 	peer->Startup( MAX_CONNECT_COUNT, &sd, 1);
 	peer->SetMaximumIncomingConnections( MAX_CONNECT_COUNT );
 
+	/*
 	FT_ConnectProcessResultHandlerTest *pluginHandler = new FT_ConnectProcessResultHandlerTest();
 	FT_ConnectProcess *process = FT_ConnectProcess::GetInstance();
 	process->SetResultHandler( pluginHandler );
 	peer->AttachPlugin( process );
+	*/
 
 	printf_s("Server Listen At : %d , MaxConnect: %d \n", SERVER_PORT, MAX_CONNECT_COUNT);
 	
@@ -70,7 +72,7 @@ int main (void){
 
 	RakPeerInterface::DestroyInstance(peer);
 
-	delete(pluginHandler);
+	// delete(pluginHandler);
 	
 	return 0;
 }

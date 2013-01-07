@@ -11,6 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Base\Assert.cpp" />
+    <ClCompile Include="..\Base\Ini.cpp" />
     <ClCompile Include="Login.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -19,6 +21,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Base\Assert.h" />
+    <ClInclude Include="..\Base\BaseType.h" />
+    <ClInclude Include="..\Base\Ini.h" />
     <ClInclude Include="LoginDefines.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -62,9 +67,9 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;__WINDOWS__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>..\..\RakNet_PC-4.06\Source</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\RakNet_PC-4.06\Source;.\Base</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
