@@ -40,12 +40,18 @@ VOID Config::LoadLoginInfo_Reload( )
 
 	Ini ini( FILE_LOGIN_INFO ) ;
 
-	ini.ReadText( "System", "DBDSNName", m_LoginInfo.m_DBDSNName, DATABASE_STR_LEN ) ;
-	ini.ReadText( "System", "DBUser", m_LoginInfo.m_DBUser, DB_USE_STR_LEN ) ;
-	ini.ReadText( "System", "DBPassword", m_LoginInfo.m_DBPassword, DB_PASSWORD_STR_LEN ) ;
+	CHAR	dbFlag[] = "DB"; 
 
-	m_LoginInfo.m_ServerPort	=	(UINT)(ini.ReadInt("System","ServerPort"));
-	m_LoginInfo.m_MaxConnectCount	=	(UINT)(ini.ReadInt("System","MaxConnectCount"));
+	ini.ReadText( dbFlag, "DBDriver", m_LoginInfo.m_DBDriver, DATABASE_STR_LEN ) ;
+	ini.ReadText( dbFlag, "DBIP", m_LoginInfo.m_DBIP, DATABASE_STR_LEN ) ;
+	m_LoginInfo.m_DBPort = (UINT)(ini.ReadInt(dbFlag,"DBPort"));
+
+	ini.ReadText( dbFlag, "DBName", m_LoginInfo.m_DBName, DATABASE_STR_LEN ) ;
+	ini.ReadText( dbFlag, "DBUser", m_LoginInfo.m_DBUser, DB_USE_STR_LEN ) ;
+	ini.ReadText( dbFlag, "DBPassword", m_LoginInfo.m_DBPassword, DB_PASSWORD_STR_LEN ) ;
+
+	m_LoginInfo.m_ServerPort	=	(UINT)(ini.ReadInt(dbFlag, "ServerPort"));
+	m_LoginInfo.m_MaxConnectCount	=	(UINT)(ini.ReadInt(dbFlag, "MaxConnectCount"));
 
 	// Log::SaveLog( CONFIG_LOGFILE, "Load LoginInfo.ini ...Only OK! " ) ;
 

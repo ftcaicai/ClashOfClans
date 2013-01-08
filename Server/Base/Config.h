@@ -6,8 +6,10 @@
 
 struct _LOGIN_INFO 
 {
-
-	CHAR			m_DBDSNName[DATABASE_STR_LEN];
+	CHAR			m_DBDriver[DATABASE_STR_LEN];
+	CHAR			m_DBIP[IP_SIZE];
+	UINT			m_DBPort;
+	CHAR			m_DBName[DATABASE_STR_LEN];
 	CHAR			m_DBUser[DB_USE_STR_LEN];
 	CHAR			m_DBPassword[DB_PASSWORD_STR_LEN];
 

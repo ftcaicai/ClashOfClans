@@ -37,6 +37,10 @@
       <Filter>Base\DataBase</Filter>
     </ClInclude>
     <ClInclude Include="MySQLTest.h" />
+    <ClInclude Include="..\Base\DB_Struct.h" />
+    <ClInclude Include="..\Base\OtlDefine.h">
+      <Filter>Base\DataBase</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">

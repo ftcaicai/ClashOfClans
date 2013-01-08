@@ -1,11 +1,14 @@
 #ifndef __BASETYPE_H__
 #define __BASETYPE_H__
 
-
 #include <stdio.h>
 #include <iostream>
-#include <fstream>
+#include <vector>
+#include <iterator>
 #include <string>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
 #include <time.h>
 #include <math.h>
 #include <stdarg.h>

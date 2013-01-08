@@ -3,8 +3,6 @@
 #include "Config.h"
 #include "MySQLTest.h"
 
-using namespace std;
-
 bool _bQuit = false;
 
 void Quit (int k){
@@ -57,13 +55,45 @@ VOID Init (){
 VOID _TestMySQLConnect (){
 
 	MySQLTest mysqlTest;
-
-	if (!mysqlTest.Connect(g_Config.m_LoginInfo.m_DBUser, g_Config.m_LoginInfo.m_DBPassword, g_Config.m_LoginInfo.m_DBDSNName)){
+	
+	BOOL bRet = 
+		mysqlTest.Connect(
+			g_Config.m_LoginInfo.m_DBDriver,
+			g_Config.m_LoginInfo.m_DBIP,
+			g_Config.m_LoginInfo.m_DBPort,
+			g_Config.m_LoginInfo.m_DBUser, 
+			g_Config.m_LoginInfo.m_DBPassword, 
+			g_Config.m_LoginInfo.m_DBName);
+	if (!bRet){
 		printf_s("MysqlConnect Error...\n");
+		Assert(TRUE);
 		return;
 	}
+	
+	mysqlTest.Delete();
+	printf_s("Insert...\n");
+
+	mysqlTest.Insert();
+
+	printf_s("Insert...OK!\n");
+
+	printf_s("After Insert Select...\n");
+	
+	mysqlTest.TestSelect();
+
+	printf_s("After Insert Select...OK\n");
+
+	printf_s("Delete...\n");
+
+	mysqlTest.Delete();
+
+	printf_s("Delete...OK!\n");
+
+	printf_s("After Delete Select...\n");
 
 	mysqlTest.TestSelect();
+
+	printf_s("After Delete Select...OK\n");
 }
 
 

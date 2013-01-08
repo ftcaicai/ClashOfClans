@@ -26,9 +26,11 @@
     <ClInclude Include="..\Base\Assert.h" />
     <ClInclude Include="..\Base\BaseType.h" />
     <ClInclude Include="..\Base\Config.h" />
+    <ClInclude Include="..\Base\DB_Struct.h" />
     <ClInclude Include="..\Base\Define.h" />
     <ClInclude Include="..\Base\FileDef.h" />
     <ClInclude Include="..\Base\Ini.h" />
+    <ClInclude Include="..\Base\OtlDefine.h" />
     <ClInclude Include="..\Base\otlv4.h" />
     <ClInclude Include="LoginDefines.h" />
     <ClInclude Include="MySQLTest.h" />
@@ -85,6 +87,9 @@
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <IgnoreSpecificDefaultLibraries>LIBCMTD.lib</IgnoreSpecificDefaultLibraries>
     </Link>
+    <PostBuildEvent>
+      <Command>Make.bat</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

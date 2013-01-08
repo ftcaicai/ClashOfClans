@@ -8,13 +8,7 @@
 #include "RakSleep.h"
 #include "MessageIdentifiers.h"
 
-#define	SERVER_PORT  60000
-#define MAX_CONNECT_COUNT 1000
-
-#define OTL_ODBC // Compile OTL 4.0/ODBC
-// The following #define is required with MyODBC 5.1 and higher
-#define OTL_ODBC_SELECT_STM_EXECUTE_BEFORE_DESCRIBE
-#include "otlv4.h"
+#include "OtlDefine.h"
 
 using namespace RakNet;
 
