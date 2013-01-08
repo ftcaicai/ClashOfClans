@@ -12,8 +12,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Base\Assert.cpp" />
+    <ClCompile Include="..\Base\Config.cpp" />
     <ClCompile Include="..\Base\Ini.cpp" />
     <ClCompile Include="Login.cpp" />
+    <ClCompile Include="MySQLTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RakNet\RakNet.vcxproj">
@@ -23,8 +25,13 @@
   <ItemGroup>
     <ClInclude Include="..\Base\Assert.h" />
     <ClInclude Include="..\Base\BaseType.h" />
+    <ClInclude Include="..\Base\Config.h" />
+    <ClInclude Include="..\Base\Define.h" />
+    <ClInclude Include="..\Base\FileDef.h" />
     <ClInclude Include="..\Base\Ini.h" />
+    <ClInclude Include="..\Base\otlv4.h" />
     <ClInclude Include="LoginDefines.h" />
+    <ClInclude Include="MySQLTest.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CBBE61B9-3C20-4266-A5E5-1BF940663B38}</ProjectGuid>
@@ -69,12 +76,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;__WINDOWS__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>..\..\RakNet_PC-4.06\Source;.\Base</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\RakNet_PC-4.06\Source;..\Base</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>ws2_32.lib;</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;odbc32.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <IgnoreSpecificDefaultLibraries>LIBCMTD.lib</IgnoreSpecificDefaultLibraries>
     </Link>

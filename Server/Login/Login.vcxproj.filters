@@ -8,6 +8,10 @@
     <ClCompile Include="..\Base\Assert.cpp">
       <Filter>Base</Filter>
     </ClCompile>
+    <ClCompile Include="..\Base\Config.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="MySQLTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoginDefines.h" />
@@ -20,10 +24,26 @@
     <ClInclude Include="..\Base\Assert.h">
       <Filter>Base</Filter>
     </ClInclude>
+    <ClInclude Include="..\Base\Config.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\Define.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\FileDef.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\otlv4.h">
+      <Filter>Base\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="MySQLTest.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
       <UniqueIdentifier>{55e1aea2-8c9b-4190-b9f5-0e2a0ed134a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\DataBase">
+      <UniqueIdentifier>{7702777d-15e5-490a-8a17-e98fa2f298b4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -13,7 +13,7 @@ Ini::Ini()
 {
 	__ENTER_FUNCTION
 
-		m_lDataLen = 0;
+	m_lDataLen = 0;
 	m_strData = NULL;
 	IndexNum = 0;
 	IndexList = NULL;

@@ -1,21 +1,6 @@
 #ifndef __BASETYPE_H__
 #define __BASETYPE_H__
 
-#if defined(__WINDOWS__)
-#pragma warning ( disable : 4786 )
-#pragma warning ( disable : 4996 )
-#include <Windows.h>
-#include "crtdbg.h"
-#elif defined(__LINUX__)
-#include <sys/types.h>
-#include <pthread.h>
-#include <execinfo.h>
-#include <signal.h>
-#include <exception>
-#include <setjmp.h>
-#include <sys/epoll.h>
-#endif
-
 
 #include <stdio.h>
 #include <iostream>
@@ -24,6 +9,7 @@
 #include <time.h>
 #include <math.h>
 #include <stdarg.h>
+#include <signal.h>
 
 using namespace std;
 
@@ -43,7 +29,7 @@ typedef float			FLOAT;			//±ê×¼float
 
 typedef UCHAR			uchar;
 typedef USHORT			ushort;
-typedef UINT			UINT;
+typedef uint			UINT;
 typedef ULONG			ulong;
 typedef ULONG			IP_t;
 typedef USHORT			PacketID_t;
@@ -86,5 +72,8 @@ typedef UCHAR			BYTE;
 
 #define __ENTER_FUNCTION 
 #define __LEAVE_FUNCTION
+
+#define _MY_TRY try
+#define _MY_CATCH catch(...)
 
 #endif

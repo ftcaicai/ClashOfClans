@@ -1,13 +1,11 @@
+#pragma comment(lib,"User32.lib")
+
 #include "Assert.h"
 #include <time.h>
 #include <windows.h>
 
 VOID __show__( const CHAR* szTemp )
 {
-
-#ifdef __LINUX__
-	printf("Assert:%s",szTemp);
-#endif
 
 	//保存日志
 #ifndef GAME_CLIENT
@@ -17,11 +15,7 @@ VOID __show__( const CHAR* szTemp )
 	fclose(f) ;
 #endif
 
-#if defined(__WINDOWS__)
-	// INT iRet = ::MessageBox( NULL, szTemp, "异常", MB_OK ) ;
-#elif defined(__LINUX__)
-
-#endif
+	INT iRet = MessageBox( NULL, szTemp, "异常", MB_OK ) ;
 
 #ifdef GAME_CLIENT
 	throw(std::string(szTemp));
@@ -32,10 +26,7 @@ VOID __show__( const CHAR* szTemp )
 
 VOID __messagebox__(const CHAR*msg )
 {
-#if defined(__WINDOWS__)
-	 // ::MessageBox( NULL, msg, "信息", MB_OK ) ;
-#elif defined(__LINUX__)
-#endif
+	MessageBox( NULL, msg, "信息", MB_OK ) ;
 }
 
 //--------------------------------------------------------------------------------
@@ -48,11 +39,8 @@ VOID __assert__ ( const CHAR * file , UINT line , const CHAR * func , const CHAR
 {
 	CHAR szTemp[1024] = {0};
 
-#ifdef __LINUX__ //换个格式
-	sprintf( szTemp, "[%s][%d][%s][%s]\n", file, line, func, expr ) ;
-#else
 	sprintf( szTemp, "[%s][%d][%s][%s]", file, line, func, expr ) ;
-#endif
+
 	__show__(szTemp) ;
 }
 
@@ -60,11 +48,8 @@ VOID __assertex__ ( const CHAR * file , UINT line , const CHAR * func , const CH
 {
 	CHAR szTemp[1024] = {0};
 
-#ifdef __LINUX__
-	sprintf( szTemp, "[%s][%d][%s][%s]\n[%s]\n", file, line, func, expr ,msg ) ;
-#else
 	sprintf( szTemp, "[%s][%d][%s][%s]\n[%s]", file, line, func, expr ,msg ) ;
-#endif
+
 	__show__(szTemp) ;
 }
 
@@ -72,11 +57,8 @@ VOID __assertspecial__ ( const CHAR * file , UINT line , const CHAR * func , con
 {
 	CHAR szTemp[1024] = {0};
 
-#ifdef __LINUX__
-	sprintf( szTemp, "S[%s][%d][%s][%s]\n[%s]\n", file, line, func, expr ,msg ) ;
-#else
 	sprintf( szTemp, "S[%s][%d][%s][%s]\n[%s]", file, line, func, expr ,msg ) ;
-#endif
+
 	__show__(szTemp) ;
 }
 //--------------------------------------------------------------------------------

@@ -1,8 +1,7 @@
-#include <stdio.h>
-#include <signal.h>
-#include <ctime>
 #include "LoginDefines.h"
 #include "FT_ConnectProcess.h"
+#include "Config.h"
+#include "MySQLTest.h"
 
 using namespace std;
 
@@ -47,15 +46,40 @@ void ProcessRakNetMessage (RakPeerInterface *peer){
 	}
 }
 
+VOID Init (){
+	BOOL bRet = g_Config.Init();
+	Assert(bRet);
+	printf_s("Load Config...OK!\n");
+}
+
+
+
+VOID _TestMySQLConnect (){
+
+	MySQLTest mysqlTest;
+
+	if (!mysqlTest.Connect(g_Config.m_LoginInfo.m_DBUser, g_Config.m_LoginInfo.m_DBPassword, g_Config.m_LoginInfo.m_DBDSNName)){
+		printf_s("MysqlConnect Error...\n");
+		return;
+	}
+
+	mysqlTest.TestSelect();
+}
+
+
 int main (void){
-	
+
+	Init ();
+
+	_TestMySQLConnect ();
+
 	signal(SIGINT, Quit);
 
 	RakPeerInterface *peer = RakPeerInterface::GetInstance();
-	SocketDescriptor sd(SERVER_PORT, 0);
+	SocketDescriptor sd(g_Config.m_LoginInfo.m_ServerPort, 0);
 
-	peer->Startup( MAX_CONNECT_COUNT, &sd, 1);
-	peer->SetMaximumIncomingConnections( MAX_CONNECT_COUNT );
+	peer->Startup( g_Config.m_LoginInfo.m_MaxConnectCount, &sd, 1);
+	peer->SetMaximumIncomingConnections( g_Config.m_LoginInfo.m_MaxConnectCount );
 
 	/*
 	FT_ConnectProcessResultHandlerTest *pluginHandler = new FT_ConnectProcessResultHandlerTest();
@@ -64,7 +88,7 @@ int main (void){
 	peer->AttachPlugin( process );
 	*/
 
-	printf_s("Server Listen At : %d , MaxConnect: %d \n", SERVER_PORT, MAX_CONNECT_COUNT);
+	printf_s("Server Listen At : %d , MaxConnect: %d \n", g_Config.m_LoginInfo.m_ServerPort, g_Config.m_LoginInfo.m_MaxConnectCount);
 	
 	ProcessRakNetMessage(peer);
 
