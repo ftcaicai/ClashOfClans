@@ -1,7 +1,8 @@
-#include "LoginDefines.h"
+#include "stdafx.h"
+#include "LoginIncludes.h"
+#include "RakSleep.h"
 #include "FT_ConnectProcess.h"
-#include "Config.h"
-#include "MySQLTest.h"
+
 
 bool _bQuit = false;
 
@@ -50,12 +51,12 @@ VOID Init (){
 	printf_s("Load Config...OK!\n");
 }
 
-
+DWORD take;
 
 VOID _TestMySQLConnect (){
 
 	MySQLTest mysqlTest;
-	
+	 
 	BOOL bRet = 
 		mysqlTest.Connect(
 			g_Config.m_LoginInfo.m_DBDriver,
@@ -69,37 +70,51 @@ VOID _TestMySQLConnect (){
 		Assert(TRUE);
 		return;
 	}
-	
-	mysqlTest.Delete();
+	mysqlTest.CreateTable();
+	mysqlTest.DeleteAll();
+
 	printf_s("Insert...\n");
+	take = GetTickCount();
 
 	mysqlTest.Insert();
 
-	printf_s("Insert...OK!\n");
+	printf_s("Insert...OK! Use Tick =[%ld]\n", GetTickCount () - take);
 
+	printf_s("InsertByStruct...\n");
+	take = GetTickCount();
+
+	mysqlTest.InsertByStruct();
+
+	printf_s("InsertByStruct...OK! Use Tick =[%ld]\n", GetTickCount () - take);
+
+	take = GetTickCount();
+	/*
 	printf_s("After Insert Select...\n");
 	
 	mysqlTest.TestSelect();
 
-	printf_s("After Insert Select...OK\n");
+	printf_s("After Insert Select...OK! Use Tick =[%ld]\n", GetTickCount () - take);
+	*/
+
+	take = GetTickCount();
 
 	printf_s("Delete...\n");
 
 	mysqlTest.Delete();
 
-	printf_s("Delete...OK!\n");
+	printf_s("Delete...OK! Use Tick =[%ld]\n",  GetTickCount () - take);
 
 	printf_s("After Delete Select...\n");
 
-	mysqlTest.TestSelect();
+	mysqlTest.SelectByStruct();
 
-	printf_s("After Delete Select...OK\n");
+	printf_s("After Delete Select...OK\n"); 
 }
 
 
 int main (void){
 
-	Init ();
+	Init (); 
 
 	_TestMySQLConnect ();
 

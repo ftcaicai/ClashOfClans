@@ -1,5 +1,26 @@
 #include "MySQLTest.h"
 
+// redefined operator>> for reading row& from otl_stream
+otl_stream& operator>>(otl_stream& s, row& row)
+{
+	s>>row.f1>>row.f2;
+	return s;
+}
+
+// redefined operator<< for writing row& into otl_stream
+otl_stream& operator<<(otl_stream& s, const row& row)
+{
+	s<<row.f1<<row.f2;
+	return s;
+}
+
+// redefined operator<< writing row& into ostream
+ostream& operator<<(ostream& s, const row& row)
+{
+	s<<"f1="<<row.f1<<", f2="<<row.f2;
+	return s;
+}
+
 
 MySQLTest::MySQLTest(void)
 {
@@ -115,4 +136,47 @@ VOID MySQLTest::Delete(){
 		sprintf_s(sql, "DELETE FROM test_tab WHERE f1 = %d", i);
 		db.direct_exec(sql);
 	}
+}
+
+VOID MySQLTest::DeleteAll() {
+	db.direct_exec("DELETE FROM test_tab WHERE 1=1 ");
+}
+
+VOID MySQLTest::InsertByStruct (){
+
+	otl_stream write(
+		1,
+		"INSERT INTO test_tab VALUES"
+		"(:f1<int>,:f2<char[33]>),"
+		"(:f12<int>,:f22<char[33]>)",
+		db);
+
+	row r;
+	vector<row> vo;
+	for (int i = 1; i <= 100; i++)
+	{
+		r.f1 = i + 100;
+		r.f2 = "FtCaiCai";
+		vo.push_back(r);
+	}
+
+	copy(vo.begin(),vo.end(),  otl_output_iterator<row>(write));
+}
+
+VOID MySQLTest::SelectByStruct(){
+	otl_stream read(
+		50,
+		"SELECT f1,f2 FROM test_tab ",
+		db);
+
+	vector<row> v;
+
+	copy(	
+		otl_input_iterator<row, ptrdiff_t>(read),
+		otl_input_iterator<row, ptrdiff_t>(),
+		back_inserter(v)
+		);
+	cout<<"Size="<<v.size()<<endl;
+
+	copy(v.begin(), v.end(), ostream_iterator<row>(cout, "\n"));
 }

@@ -163,6 +163,13 @@ pip-log.txt
 .DS_Store
 
 #################
+## Unity3d Server
+#################
+
+Server/Exe
+Server/Login/Exe
+
+#################
 ## Unity3d
 #################
 

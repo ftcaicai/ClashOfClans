@@ -16,6 +16,7 @@
     <ClCompile Include="..\Base\Ini.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MySQLTest.cpp" />
+    <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RakNet\RakNet.vcxproj">
@@ -26,14 +27,16 @@
     <ClInclude Include="..\Base\Assert.h" />
     <ClInclude Include="..\Base\BaseType.h" />
     <ClInclude Include="..\Base\Config.h" />
-    <ClInclude Include="..\Base\DB_Struct.h" />
     <ClInclude Include="..\Base\Define.h" />
     <ClInclude Include="..\Base\FileDef.h" />
     <ClInclude Include="..\Base\Ini.h" />
     <ClInclude Include="..\Base\OtlDefine.h" />
     <ClInclude Include="..\Base\otlv4.h" />
-    <ClInclude Include="LoginDefines.h" />
+    <ClInclude Include="LoginIncludes.h" />
+    <ClInclude Include="LoginMessageIDTypes.h" />
     <ClInclude Include="MySQLTest.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CBBE61B9-3C20-4266-A5E5-1BF940663B38}</ProjectGuid>
@@ -50,7 +53,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -64,11 +67,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\$(TargetName)\</OutDir>
+    <OutDir>$(SolutionDir)Exe\$(Configuration)\$(TargetName)\</OutDir>
     <TargetName>$(ProjectName)D</TargetName>
+    <IntDir>Exe\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Exe\$(Configuration)\$(TargetName)\</OutDir>
+    <TargetName>$(ProjectName)R</TargetName>
+    <IntDir>Exe\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -88,7 +95,7 @@
       <IgnoreSpecificDefaultLibraries>LIBCMTD.lib</IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
-      <Command>Make.bat</Command>
+      <Command>MakeDebug.bat</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -99,14 +106,20 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;__WINDOWS__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\RakNet_PC-4.06\Source;..\Base</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;odbc32.lib</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD.lib</IgnoreSpecificDefaultLibraries>
     </Link>
+    <PostBuildEvent>
+      <Command>MakeRelease.bat</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

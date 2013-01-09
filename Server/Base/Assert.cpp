@@ -1,8 +1,7 @@
 #pragma comment(lib,"User32.lib")
 
 #include "Assert.h"
-#include <time.h>
-#include <windows.h>
+
 
 VOID __show__( const CHAR* szTemp )
 {
@@ -15,7 +14,7 @@ VOID __show__( const CHAR* szTemp )
 	fclose(f) ;
 #endif
 
-	INT iRet = MessageBox( NULL, szTemp, "异常", MB_OK ) ;
+	// INT iRet = MessageBox( NULL, szTemp, "异常", MB_OK ) ;
 
 #ifdef GAME_CLIENT
 	throw(std::string(szTemp));
@@ -26,7 +25,7 @@ VOID __show__( const CHAR* szTemp )
 
 VOID __messagebox__(const CHAR*msg )
 {
-	MessageBox( NULL, msg, "信息", MB_OK ) ;
+	// MessageBox( NULL, msg, "信息", MB_OK ) ;
 }
 
 //--------------------------------------------------------------------------------

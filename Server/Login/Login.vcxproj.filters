@@ -1,53 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Login.cpp" />
     <ClCompile Include="..\Base\Ini.cpp">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="..\Base\Assert.cpp">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="..\Base\Config.cpp">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="MySQLTest.cpp" />
+    <ClCompile Include="Login.cpp">
+      <Filter>Login\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Login\System</Filter>
+    </ClCompile>
+    <ClCompile Include="MySQLTest.cpp">
+      <Filter>Login\Test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LoginDefines.h" />
     <ClInclude Include="..\Base\Ini.h">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Base\BaseType.h">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Base\Assert.h">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Base\Config.h">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Base\Define.h">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Base\FileDef.h">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Base\otlv4.h">
-      <Filter>Base\DataBase</Filter>
+      <Filter>Common\DataBase</Filter>
     </ClInclude>
-    <ClInclude Include="MySQLTest.h" />
-    <ClInclude Include="..\Base\DB_Struct.h" />
     <ClInclude Include="..\Base\OtlDefine.h">
-      <Filter>Base\DataBase</Filter>
+      <Filter>Common\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="MySQLTest.h">
+      <Filter>Login\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Login\System</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Login\System</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginMessageIDTypes.h">
+      <Filter>Login\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginIncludes.h">
+      <Filter>Login</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Base">
+    <Filter Include="Login">
+      <UniqueIdentifier>{aa42ec60-249b-4b69-8ad4-0aee80305cf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Login\Main">
+      <UniqueIdentifier>{925fe165-22c0-40a3-9348-e7a91470e40c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
       <UniqueIdentifier>{55e1aea2-8c9b-4190-b9f5-0e2a0ed134a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Base\DataBase">
+    <Filter Include="Common\DataBase">
       <UniqueIdentifier>{7702777d-15e5-490a-8a17-e98fa2f298b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Login\System">
+      <UniqueIdentifier>{8fb14c01-feaf-4d81-bad9-552f59e6875a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Login\Test">
+      <UniqueIdentifier>{e6739cb0-d92c-45ce-a7dd-118df55d288f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Login\Net">
+      <UniqueIdentifier>{db56f5a3-6dcd-4d4a-bf91-7a3c406ffe93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Login\DB">
+      <UniqueIdentifier>{266c609f-cece-41cf-a1e6-f6111668761d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
