@@ -261,12 +261,6 @@
     <ClInclude Include="..\..\RakNet_PC-4.06\Source\XBox360Includes.h" />
     <ClInclude Include="..\..\RakNet_PC-4.06\Source\_FindFirst.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\RakNet_PC-4.06\Source\CMakeLists.txt" />
-    <None Include="..\..\RakNet_PC-4.06\Source\RakNet.vcproj" />
-    <None Include="..\..\RakNet_PC-4.06\Source\RakNet_vc8.vcproj" />
-    <None Include="..\..\RakNet_PC-4.06\Source\RakNet_vc9.vcproj" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8FC7A62B-4973-4738-B5EC-64F94D4EAF4E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
