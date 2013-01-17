@@ -27,6 +27,10 @@ public:
 	virtual void DebugReceive (int flag) = 0;
 
 	virtual void ReceiveLog () = 0;
+
+	virtual void ReceiveLog2 () = 0;
+
+	virtual PluginReceiveResult OnReceive(Packet *packet) { return RR_CONTINUE_PROCESSING; }
 };
 
 class FT_ConnectProcessResultHandlerTest : public FT_ConnectProcessResultHandler {

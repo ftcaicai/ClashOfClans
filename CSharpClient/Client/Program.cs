@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using RakNet;
 
 namespace Client
 {
@@ -12,12 +13,20 @@ namespace Client
         public static string password = "";
 
         private static XNetWork2 _client2;
+        private static RakNetClient client;
 
         static void Main(string[] args)
         {
-            _Connect2();
+            _RakNetClient();
 
             Console.ReadKey();
+
+            client.Dispose();
+        }
+
+        static void _RakNetClient (){
+            client = new RakNetClient(serverIP, serverPort, ProcessMessage);
+            client.Start();
         }
 
         static void _Connect2()
@@ -33,6 +42,22 @@ namespace Client
             {
                 _client2 = new XNetWork2();
                 _client2._Init();
+            }
+        }
+
+        static void ProcessMessage(RakNet.Packet packet)
+        {
+            if (packet != null)
+            {
+                if (packet.data[0] == (byte)(DefaultMessageIDTypes.ID_USER_PACKET_ENUM + 1))
+                {
+                    BitStream receiveBitStream = new BitStream();
+                    receiveBitStream.Write(packet.data, packet.length);
+                    receiveBitStream.IgnoreBytes(1);
+                    FT_UnitData data = new FT_UnitData();
+                    data.Serialize(false, receiveBitStream);
+                    Log.Debug(" data.nGrid_x: " + data.nGrid_x);
+                }
             }
         }
     }

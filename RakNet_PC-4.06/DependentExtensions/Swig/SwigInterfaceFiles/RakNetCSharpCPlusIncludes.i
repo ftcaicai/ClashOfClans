@@ -88,6 +88,9 @@ typedef unsigned int SOCKET;
 // FtLover Add at 2012-12-29 01:00:26
 #include "FT_ConnectProcess.h"
 
+// FtLover Add at 2013Äê1ÔÂ17ÈÕ 18:45:39
+#include "FT_DataStruct.h"
+
 //Macros
 //Swig C++ code only TypeDefs
 //Most of these are nested structs/classes that swig needs to understand as global

@@ -144,6 +144,8 @@ public:
     virtual void OnDisconnectedFromServer();
     virtual void DebugReceive(int flag);
     virtual void ReceiveLog();
+    virtual void ReceiveLog2();
+    virtual RakNet::PluginReceiveResult OnReceive(RakNet::Packet *packet);
 
     typedef void (SWIGSTDCALL* SWIG_Callback0_t)();
     typedef void (SWIGSTDCALL* SWIG_Callback1_t)();
@@ -151,7 +153,8 @@ public:
     typedef void (SWIGSTDCALL* SWIG_Callback3_t)();
     typedef void (SWIGSTDCALL* SWIG_Callback4_t)(int);
     typedef void (SWIGSTDCALL* SWIG_Callback5_t)();
-    void swig_connect_director(SWIG_Callback0_t callbackOnConnectedToServer, SWIG_Callback1_t callbackOnFailedToConnect, SWIG_Callback2_t callbackOnLostConnection, SWIG_Callback3_t callbackOnDisconnectedFromServer, SWIG_Callback4_t callbackDebugReceive, SWIG_Callback5_t callbackReceiveLog);
+    typedef void (SWIGSTDCALL* SWIG_Callback6_t)();
+    void swig_connect_director(SWIG_Callback0_t callbackOnConnectedToServer, SWIG_Callback1_t callbackOnFailedToConnect, SWIG_Callback2_t callbackOnLostConnection, SWIG_Callback3_t callbackOnDisconnectedFromServer, SWIG_Callback4_t callbackDebugReceive, SWIG_Callback5_t callbackReceiveLog, SWIG_Callback6_t callbackReceiveLog2);
 
 private:
     SWIG_Callback0_t swig_callbackOnConnectedToServer;
@@ -160,6 +163,7 @@ private:
     SWIG_Callback3_t swig_callbackOnDisconnectedFromServer;
     SWIG_Callback4_t swig_callbackDebugReceive;
     SWIG_Callback5_t swig_callbackReceiveLog;
+    SWIG_Callback6_t swig_callbackReceiveLog2;
     void swig_init_callbacks();
 };
 

@@ -414,6 +414,9 @@ typedef unsigned int SOCKET;
 // FtLover Add at 2012-12-29 01:00:26
 #include "FT_ConnectProcess.h"
 
+// FtLover Add at 2013Äê1ÔÂ17ÈÕ 18:45:39
+#include "FT_DataStruct.h"
+
 //Macros
 //Swig C++ code only TypeDefs
 //Most of these are nested structs/classes that swig needs to understand as global
@@ -1362,13 +1365,26 @@ void SwigDirector_FT_ConnectProcessResultHandler::ReceiveLog() {
   }
 }
 
-void SwigDirector_FT_ConnectProcessResultHandler::swig_connect_director(SWIG_Callback0_t callbackOnConnectedToServer, SWIG_Callback1_t callbackOnFailedToConnect, SWIG_Callback2_t callbackOnLostConnection, SWIG_Callback3_t callbackOnDisconnectedFromServer, SWIG_Callback4_t callbackDebugReceive, SWIG_Callback5_t callbackReceiveLog) {
+void SwigDirector_FT_ConnectProcessResultHandler::ReceiveLog2() {
+  if (!swig_callbackReceiveLog2) {
+    throw Swig::DirectorPureVirtualException("RakNet::FT_ConnectProcessResultHandler::ReceiveLog2");
+  } else {
+    swig_callbackReceiveLog2();
+  }
+}
+
+RakNet::PluginReceiveResult SwigDirector_FT_ConnectProcessResultHandler::OnReceive(RakNet::Packet *packet) {
+  return RakNet::FT_ConnectProcessResultHandler::OnReceive(packet);
+}
+
+void SwigDirector_FT_ConnectProcessResultHandler::swig_connect_director(SWIG_Callback0_t callbackOnConnectedToServer, SWIG_Callback1_t callbackOnFailedToConnect, SWIG_Callback2_t callbackOnLostConnection, SWIG_Callback3_t callbackOnDisconnectedFromServer, SWIG_Callback4_t callbackDebugReceive, SWIG_Callback5_t callbackReceiveLog, SWIG_Callback6_t callbackReceiveLog2) {
   swig_callbackOnConnectedToServer = callbackOnConnectedToServer;
   swig_callbackOnFailedToConnect = callbackOnFailedToConnect;
   swig_callbackOnLostConnection = callbackOnLostConnection;
   swig_callbackOnDisconnectedFromServer = callbackOnDisconnectedFromServer;
   swig_callbackDebugReceive = callbackDebugReceive;
   swig_callbackReceiveLog = callbackReceiveLog;
+  swig_callbackReceiveLog2 = callbackReceiveLog2;
 }
 
 void SwigDirector_FT_ConnectProcessResultHandler::swig_init_callbacks() {
@@ -1378,6 +1394,7 @@ void SwigDirector_FT_ConnectProcessResultHandler::swig_init_callbacks() {
   swig_callbackOnDisconnectedFromServer = 0;
   swig_callbackDebugReceive = 0;
   swig_callbackReceiveLog = 0;
+  swig_callbackReceiveLog2 = 0;
 }
 
 
@@ -22131,22 +22148,20 @@ SWIGEXPORT void SWIGSTDCALL CSharp_FT_ConnectProcessResultHandler_ReceiveLog(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_FT_ConnectProcessResultHandler_director_connect(void *objarg, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback0_t callback0, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback1_t callback1, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback2_t callback2, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback3_t callback3, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback4_t callback4, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback5_t callback5) {
-  RakNet::FT_ConnectProcessResultHandler *obj = (RakNet::FT_ConnectProcessResultHandler *)objarg;
-  SwigDirector_FT_ConnectProcessResultHandler *director = dynamic_cast<SwigDirector_FT_ConnectProcessResultHandler *>(obj);
-  if (director) {
-    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5);
-  }
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_ConnectProcessResultHandler_ReceiveLog2(void * jarg1) {
+  RakNet::FT_ConnectProcessResultHandler *arg1 = (RakNet::FT_ConnectProcessResultHandler *) 0 ;
+  
+  arg1 = (RakNet::FT_ConnectProcessResultHandler *)jarg1; 
+  (arg1)->ReceiveLog2();
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_FT_ConnectProcessResultHandlerTest() {
-  void * jresult ;
-  RakNet::FT_ConnectProcessResultHandlerTest *result = 0 ;
-  
-  result = (RakNet::FT_ConnectProcessResultHandlerTest *)new RakNet::FT_ConnectProcessResultHandlerTest();
-  jresult = (void *)result; 
-  return jresult;
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_ConnectProcessResultHandler_director_connect(void *objarg, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback0_t callback0, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback1_t callback1, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback2_t callback2, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback3_t callback3, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback4_t callback4, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback5_t callback5, SwigDirector_FT_ConnectProcessResultHandler::SWIG_Callback6_t callback6) {
+  RakNet::FT_ConnectProcessResultHandler *obj = (RakNet::FT_ConnectProcessResultHandler *)objarg;
+  SwigDirector_FT_ConnectProcessResultHandler *director = dynamic_cast<SwigDirector_FT_ConnectProcessResultHandler *>(obj);
+  if (director) {
+    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6);
+  }
 }
 
 
@@ -22251,6 +22266,168 @@ SWIGEXPORT void SWIGSTDCALL CSharp_FT_ConnectProcess_SetResultHandler(void * jar
   arg1 = (RakNet::FT_ConnectProcess *)jarg1; 
   arg2 = (RakNet::FT_ConnectProcessResultHandler *)jarg2; 
   (arg1)->SetResultHandler(arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_UnitData_iID_set(void * jarg1, unsigned int jarg2) {
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  unsigned int arg2 ;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  if (arg1) (arg1)->iID = arg2;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_FT_UnitData_iID_get(void * jarg1) {
+  unsigned int jresult ;
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  unsigned int result;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  result = (unsigned int) ((arg1)->iID);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_UnitData_iLevel_set(void * jarg1, unsigned char jarg2) {
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  unsigned char arg2 ;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  arg2 = (unsigned char)jarg2; 
+  if (arg1) (arg1)->iLevel = arg2;
+}
+
+
+SWIGEXPORT unsigned char SWIGSTDCALL CSharp_FT_UnitData_iLevel_get(void * jarg1) {
+  unsigned char jresult ;
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  unsigned char result;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  result = (unsigned char) ((arg1)->iLevel);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_UnitData_eUnit_set(void * jarg1, int jarg2) {
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  RakNet::FT_EUnit arg2 ;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  arg2 = (RakNet::FT_EUnit)jarg2; 
+  if (arg1) (arg1)->eUnit = arg2;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_FT_UnitData_eUnit_get(void * jarg1) {
+  int jresult ;
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  RakNet::FT_EUnit result;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  result = (RakNet::FT_EUnit) ((arg1)->eUnit);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_UnitData_nGridSize_set(void * jarg1, unsigned char jarg2) {
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  unsigned char arg2 ;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  arg2 = (unsigned char)jarg2; 
+  if (arg1) (arg1)->nGridSize = arg2;
+}
+
+
+SWIGEXPORT unsigned char SWIGSTDCALL CSharp_FT_UnitData_nGridSize_get(void * jarg1) {
+  unsigned char jresult ;
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  unsigned char result;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  result = (unsigned char) ((arg1)->nGridSize);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_UnitData_nGrid_x_set(void * jarg1, unsigned char jarg2) {
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  unsigned char arg2 ;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  arg2 = (unsigned char)jarg2; 
+  if (arg1) (arg1)->nGrid_x = arg2;
+}
+
+
+SWIGEXPORT unsigned char SWIGSTDCALL CSharp_FT_UnitData_nGrid_x_get(void * jarg1) {
+  unsigned char jresult ;
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  unsigned char result;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  result = (unsigned char) ((arg1)->nGrid_x);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_UnitData_nGrid_y_set(void * jarg1, unsigned char jarg2) {
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  unsigned char arg2 ;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  arg2 = (unsigned char)jarg2; 
+  if (arg1) (arg1)->nGrid_y = arg2;
+}
+
+
+SWIGEXPORT unsigned char SWIGSTDCALL CSharp_FT_UnitData_nGrid_y_get(void * jarg1) {
+  unsigned char jresult ;
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  unsigned char result;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  result = (unsigned char) ((arg1)->nGrid_y);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_UnitData_Serialize(void * jarg1, unsigned int jarg2, void * jarg3) {
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  bool arg2 ;
+  RakNet::BitStream *arg3 = (RakNet::BitStream *) 0 ;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  arg2 = jarg2 ? true : false; 
+  arg3 = (RakNet::BitStream *)jarg3; 
+  (arg1)->Serialize(arg2,arg3);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_FT_UnitData() {
+  void * jresult ;
+  RakNet::FT_UnitData *result = 0 ;
+  
+  result = (RakNet::FT_UnitData *)new RakNet::FT_UnitData();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_FT_UnitData(void * jarg1) {
+  RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
+  
+  arg1 = (RakNet::FT_UnitData *)jarg1; 
+  delete arg1;
 }
 
 

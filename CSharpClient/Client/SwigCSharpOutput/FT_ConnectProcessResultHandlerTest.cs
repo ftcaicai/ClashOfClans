@@ -11,12 +11,10 @@ namespace RakNet {
 using System;
 using System.Runtime.InteropServices;
 
-public class FT_ConnectProcessResultHandlerTest : IDisposable {
+public class FT_ConnectProcessResultHandlerTest : FT_ConnectProcessResultHandler {
   private HandleRef swigCPtr;
-  protected bool swigCMemOwn;
 
-  internal FT_ConnectProcessResultHandlerTest(IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
+  internal FT_ConnectProcessResultHandlerTest(IntPtr cPtr, bool cMemoryOwn) : base(RakNetPINVOKE.FT_ConnectProcessResultHandlerTest_SWIGUpcast(cPtr), cMemoryOwn) {
     swigCPtr = new HandleRef(this, cPtr);
   }
 
@@ -28,7 +26,7 @@ public class FT_ConnectProcessResultHandlerTest : IDisposable {
     Dispose();
   }
 
-  public virtual void Dispose() {
+  public override void Dispose() {
     lock(this) {
       if (swigCPtr.Handle != IntPtr.Zero) {
         if (swigCMemOwn) {
@@ -38,33 +36,31 @@ public class FT_ConnectProcessResultHandlerTest : IDisposable {
         swigCPtr = new HandleRef(null, IntPtr.Zero);
       }
       GC.SuppressFinalize(this);
+      base.Dispose();
     }
   }
 
-  public FT_ConnectProcessResultHandlerTest() : this(RakNetPINVOKE.new_FT_ConnectProcessResultHandlerTest(), true) {
-  }
-
-  public virtual void OnConnectedToServer() {
+  public override void OnConnectedToServer() {
     RakNetPINVOKE.FT_ConnectProcessResultHandlerTest_OnConnectedToServer(swigCPtr);
   }
 
-  public virtual void OnFailedToConnect() {
+  public override void OnFailedToConnect() {
     RakNetPINVOKE.FT_ConnectProcessResultHandlerTest_OnFailedToConnect(swigCPtr);
   }
 
-  public virtual void OnLostConnection() {
+  public override void OnLostConnection() {
     RakNetPINVOKE.FT_ConnectProcessResultHandlerTest_OnLostConnection(swigCPtr);
   }
 
-  public virtual void OnDisconnectedFromServer() {
+  public override void OnDisconnectedFromServer() {
     RakNetPINVOKE.FT_ConnectProcessResultHandlerTest_OnDisconnectedFromServer(swigCPtr);
   }
 
-  public virtual void DebugReceive(int flag) {
+  public override void DebugReceive(int flag) {
     RakNetPINVOKE.FT_ConnectProcessResultHandlerTest_DebugReceive(swigCPtr, flag);
   }
 
-  public virtual void ReceiveLog() {
+  public override void ReceiveLog() {
     RakNetPINVOKE.FT_ConnectProcessResultHandlerTest_ReceiveLog(swigCPtr);
   }
 

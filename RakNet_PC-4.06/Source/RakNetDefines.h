@@ -70,12 +70,15 @@
 
 
 
-
+/*
 #if defined(_DEBUG)
 #define RakAssert(x) assert(x);
 #else
 #define RakAssert(x) 
 #endif
+*/
+
+#define RakAssert(x) 
 
 #endif
 

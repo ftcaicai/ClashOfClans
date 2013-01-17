@@ -98,6 +98,7 @@
     <ClCompile Include="..\..\RakNet_PC-4.06\Source\VariadicSQLParser.cpp" />
     <ClCompile Include="..\..\RakNet_PC-4.06\Source\VitaIncludes.cpp" />
     <ClCompile Include="..\..\RakNet_PC-4.06\Source\WSAStartupSingleton.cpp" />
+    <ClCompile Include="..\..\RakNet_PC-4.06\Source\FT_DataStruct.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\RakNet_PC-4.06\Source\_FindFirst.h" />
@@ -250,5 +251,6 @@
     <ClInclude Include="..\..\RakNet_PC-4.06\Source\WindowsIncludes.h" />
     <ClInclude Include="..\..\RakNet_PC-4.06\Source\WSAStartupSingleton.h" />
     <ClInclude Include="..\..\RakNet_PC-4.06\Source\XBox360Includes.h" />
+    <ClInclude Include="..\..\RakNet_PC-4.06\Source\FT_DataStruct.h" />
   </ItemGroup>
 </Project>

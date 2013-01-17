@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Client</RootNamespace>
     <AssemblyName>Client</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -43,8 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoginProcessHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RakNetClient.cs" />
     <Compile Include="SwigCSharpOutput\AddressOrGUID.cs" />
     <Compile Include="SwigCSharpOutput\BitStream.cs" />
     <Compile Include="SwigCSharpOutput\ByteQueue.cs" />
@@ -69,6 +72,8 @@
     <Compile Include="SwigCSharpOutput\FT_ConnectProcess.cs" />
     <Compile Include="SwigCSharpOutput\FT_ConnectProcessResultHandler.cs" />
     <Compile Include="SwigCSharpOutput\FT_ConnectProcessResultHandlerTest.cs" />
+    <Compile Include="SwigCSharpOutput\FT_EUnit.cs" />
+    <Compile Include="SwigCSharpOutput\FT_UnitData.cs" />
     <Compile Include="SwigCSharpOutput\FullyConnectedMesh2.cs" />
     <Compile Include="SwigCSharpOutput\IncrementalReadInterface.cs" />
     <Compile Include="SwigCSharpOutput\JoinTeamType.cs" />
@@ -168,6 +173,9 @@
     <Compile Include="SwigCSharpOutput\UnsignedIntPointer.cs" />
     <Compile Include="SwigCSharpOutput\UnsignedShortPointer.cs" />
     <Compile Include="XNetWork2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

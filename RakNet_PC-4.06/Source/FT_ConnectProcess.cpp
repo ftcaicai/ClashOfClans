@@ -44,7 +44,7 @@ PluginReceiveResult FT_ConnectProcess::OnReceive(Packet *packet){
 
 	resultHandler->ReceiveLog();
 
-	return RR_CONTINUE_PROCESSING;
+	return resultHandler->OnReceive(packet) ;
 }
 
 void FT_ConnectProcess::OnRakPeerShutdown() {

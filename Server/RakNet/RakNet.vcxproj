@@ -36,6 +36,7 @@
     <ClCompile Include="..\..\RakNet_PC-4.06\Source\FileOperations.cpp" />
     <ClCompile Include="..\..\RakNet_PC-4.06\Source\FormatString.cpp" />
     <ClCompile Include="..\..\RakNet_PC-4.06\Source\FT_ConnectProcess.cpp" />
+    <ClCompile Include="..\..\RakNet_PC-4.06\Source\FT_DataStruct.cpp" />
     <ClCompile Include="..\..\RakNet_PC-4.06\Source\FullyConnectedMesh2.cpp" />
     <ClCompile Include="..\..\RakNet_PC-4.06\Source\Getche.cpp" />
     <ClCompile Include="..\..\RakNet_PC-4.06\Source\Gets.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="..\..\RakNet_PC-4.06\Source\FileOperations.h" />
     <ClInclude Include="..\..\RakNet_PC-4.06\Source\FormatString.h" />
     <ClInclude Include="..\..\RakNet_PC-4.06\Source\FT_ConnectProcess.h" />
+    <ClInclude Include="..\..\RakNet_PC-4.06\Source\FT_DataStruct.h" />
     <ClInclude Include="..\..\RakNet_PC-4.06\Source\FullyConnectedMesh2.h" />
     <ClInclude Include="..\..\RakNet_PC-4.06\Source\Getche.h" />
     <ClInclude Include="..\..\RakNet_PC-4.06\Source\Gets.h" />

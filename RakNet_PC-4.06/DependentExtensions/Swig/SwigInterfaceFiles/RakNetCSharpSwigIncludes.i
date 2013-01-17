@@ -68,6 +68,9 @@
 // FtLover Add at 2012-12-29 01:00:26
 %include "FT_ConnectProcess.h"
 
+// FtLover Add at 2013Äê1ÔÂ17ÈÕ 18:49:19
+%include "FT_DataStruct.h"
+
 #ifdef SWIG_ADDITIONAL_SQL_LITE
 	%include "SQLite3PluginCommon.h"
 	%include "SQLite3ClientPlugin.h"

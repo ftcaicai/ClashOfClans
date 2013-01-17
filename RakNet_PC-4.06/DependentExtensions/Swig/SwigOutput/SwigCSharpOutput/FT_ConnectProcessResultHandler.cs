@@ -69,6 +69,10 @@ public class FT_ConnectProcessResultHandler : IDisposable {
     RakNetPINVOKE.FT_ConnectProcessResultHandler_ReceiveLog(swigCPtr);
   }
 
+  public virtual void ReceiveLog2() {
+    RakNetPINVOKE.FT_ConnectProcessResultHandler_ReceiveLog2(swigCPtr);
+  }
+
   private void SwigDirectorConnect() {
     if (SwigDerivedClassHasMethod("OnConnectedToServer", swigMethodTypes0))
       swigDelegate0 = new SwigDelegateFT_ConnectProcessResultHandler_0(SwigDirectorOnConnectedToServer);
@@ -82,7 +86,9 @@ public class FT_ConnectProcessResultHandler : IDisposable {
       swigDelegate4 = new SwigDelegateFT_ConnectProcessResultHandler_4(SwigDirectorDebugReceive);
     if (SwigDerivedClassHasMethod("ReceiveLog", swigMethodTypes5))
       swigDelegate5 = new SwigDelegateFT_ConnectProcessResultHandler_5(SwigDirectorReceiveLog);
-    RakNetPINVOKE.FT_ConnectProcessResultHandler_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5);
+    if (SwigDerivedClassHasMethod("ReceiveLog2", swigMethodTypes6))
+      swigDelegate6 = new SwigDelegateFT_ConnectProcessResultHandler_6(SwigDirectorReceiveLog2);
+    RakNetPINVOKE.FT_ConnectProcessResultHandler_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6);
   }
 
   private bool SwigDerivedClassHasMethod(string methodName, Type[] methodTypes) {
@@ -115,12 +121,17 @@ public class FT_ConnectProcessResultHandler : IDisposable {
     ReceiveLog();
   }
 
+  private void SwigDirectorReceiveLog2() {
+    ReceiveLog2();
+  }
+
   public delegate void SwigDelegateFT_ConnectProcessResultHandler_0();
   public delegate void SwigDelegateFT_ConnectProcessResultHandler_1();
   public delegate void SwigDelegateFT_ConnectProcessResultHandler_2();
   public delegate void SwigDelegateFT_ConnectProcessResultHandler_3();
   public delegate void SwigDelegateFT_ConnectProcessResultHandler_4(int flag);
   public delegate void SwigDelegateFT_ConnectProcessResultHandler_5();
+  public delegate void SwigDelegateFT_ConnectProcessResultHandler_6();
 
   private SwigDelegateFT_ConnectProcessResultHandler_0 swigDelegate0;
   private SwigDelegateFT_ConnectProcessResultHandler_1 swigDelegate1;
@@ -128,6 +139,7 @@ public class FT_ConnectProcessResultHandler : IDisposable {
   private SwigDelegateFT_ConnectProcessResultHandler_3 swigDelegate3;
   private SwigDelegateFT_ConnectProcessResultHandler_4 swigDelegate4;
   private SwigDelegateFT_ConnectProcessResultHandler_5 swigDelegate5;
+  private SwigDelegateFT_ConnectProcessResultHandler_6 swigDelegate6;
 
   private static Type[] swigMethodTypes0 = new Type[] {  };
   private static Type[] swigMethodTypes1 = new Type[] {  };
@@ -135,6 +147,7 @@ public class FT_ConnectProcessResultHandler : IDisposable {
   private static Type[] swigMethodTypes3 = new Type[] {  };
   private static Type[] swigMethodTypes4 = new Type[] { typeof(int) };
   private static Type[] swigMethodTypes5 = new Type[] {  };
+  private static Type[] swigMethodTypes6 = new Type[] {  };
 }
 
 }

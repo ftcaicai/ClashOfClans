@@ -2,6 +2,7 @@
 #include "LoginIncludes.h"
 #include "RakSleep.h"
 #include "FT_ConnectProcess.h"
+#include "FT_DataStruct.h"
 
 
 bool _bQuit = false;
@@ -15,6 +16,9 @@ void ProcessRakNetMessage (RakPeerInterface *peer){
 	while (!_bQuit)
 	{
 		for( packet = peer->Receive(); packet; peer->DeallocatePacket(packet), packet = peer->Receive()){
+
+			
+
 			switch (packet->data[0])
 			{
 			case ID_CONNECTION_REQUEST_ACCEPTED:
@@ -28,6 +32,22 @@ void ProcessRakNetMessage (RakPeerInterface *peer){
 				break;
 			case ID_NEW_INCOMING_CONNECTION:
 				printf_s("A remote system has successfully connected.\n");
+				{
+					FT_UnitData ft_data;
+					RakNet::BitStream bsWrite;
+
+					ft_data.eUnit = FT_EUnit_Trees;
+					ft_data.iID = 1;
+					ft_data.iLevel = 1;
+					ft_data.nGrid_x = 5;
+					ft_data.nGrid_y = 5;
+					ft_data.nGridSize = 5;
+
+					bsWrite.Write((RakNet::MessageID)ID_FT_TEST1);
+					ft_data.Serialize(true, &bsWrite);
+					peer->Send(&bsWrite, HIGH_PRIORITY,RELIABLE_ORDERED, 0, packet->systemAddress,false);
+				}
+
 				break;
 			case ID_DISCONNECTION_NOTIFICATION:
 				printf_s(" A remote system has disconnected. \n");
@@ -116,7 +136,7 @@ int main (void){
 
 	Init (); 
 
-	_TestMySQLConnect ();
+	// _TestMySQLConnect ();
 
 	signal(SIGINT, Quit);
 

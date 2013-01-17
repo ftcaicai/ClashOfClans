@@ -120,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Source\FT_ConnectProcess.cpp" />
+    <ClCompile Include="..\..\..\Source\FT_DataStruct.cpp" />
     <ClCompile Include="..\..\..\Source\_FindFirst.cpp" />
     <ClCompile Include="..\..\..\Source\BitStream.cpp" />
     <ClCompile Include="..\..\..\Source\CCRakNetSlidingWindow.cpp" />
@@ -220,6 +221,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Source\FT_ConnectProcess.h" />
+    <ClInclude Include="..\..\..\Source\FT_DataStruct.h" />
     <ClInclude Include="..\..\..\Source\_FindFirst.h" />
     <ClInclude Include="..\..\..\Source\AutopatcherPatchContext.h" />
     <ClInclude Include="..\..\..\Source\AutopatcherRepositoryInterface.h" />

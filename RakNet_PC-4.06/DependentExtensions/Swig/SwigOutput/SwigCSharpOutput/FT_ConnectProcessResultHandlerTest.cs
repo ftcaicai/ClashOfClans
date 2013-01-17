@@ -40,9 +40,6 @@ public class FT_ConnectProcessResultHandlerTest : FT_ConnectProcessResultHandler
     }
   }
 
-  public FT_ConnectProcessResultHandlerTest() : this(RakNetPINVOKE.new_FT_ConnectProcessResultHandlerTest(), true) {
-  }
-
   public override void OnConnectedToServer() {
     RakNetPINVOKE.FT_ConnectProcessResultHandlerTest_OnConnectedToServer(swigCPtr);
   }
