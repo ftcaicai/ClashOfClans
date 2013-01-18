@@ -6,10 +6,10 @@
 #pragma once
 
 #include "targetver.h"
-#include "BaseType.h"
-#include "RakPeerInterface.h"		// 顺序不能乱. 先包含 RakNet 后 引入 OTL
-#include "OtlDefine.h"
 
-using namespace RakNet;
+#define    WIN32_LEAN_AND_MEAN   //去除一些不常用的
+#include <windows.h>
+
+#include "BaseType.h"
 
 // TODO: 在此处引用程序需要的其他头文件

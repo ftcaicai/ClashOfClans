@@ -14,7 +14,13 @@ namespace RakNet{
 	};
 
 	enum FT_MessageTypes {
-		ID_FT_TEST1 = ID_USER_PACKET_ENUM + 1
+		ID_FT_TEST1 = ID_USER_PACKET_ENUM + 1,
+		ID_SERVER_LOGIN,
+	};
+
+	enum FT_MessageTypesNode {
+		NODE_FT_None = 0,
+		NODE_FT_TEST1,
 	};
 
 	struct FT_UnitData {

@@ -1,9 +1,11 @@
 #ifndef __H_CONNECT_PROCESS
 #define __H_CONNECT_PROCESS
 #include <stdio.h>
+#include <map>
 #include "Export.h"
 #include "RakNetTypes.h"
 #include "PluginInterface2.h"
+#include "FT_DataStruct.h"
 
 namespace RakNet{
 
@@ -83,6 +85,38 @@ public:
 
 private:
 	FT_ConnectProcessResultHandler *resultHandler;
+};
+
+class FT_Node_Process {
+
+public:
+	STATIC_FACTORY_DECLARATIONS(FT_Node_Process)
+
+	FT_Node_Process ();
+	virtual ~FT_Node_Process ();
+
+	virtual FT_MessageTypesNode GetNodeType() { return NODE_FT_None; }
+
+	virtual void OnProcess (BitStream* bsIn) {}
+
+};
+
+class FT_Node_Plugin : public PluginInterface2
+{
+public:
+
+	STATIC_FACTORY_DECLARATIONS(FT_Node_Plugin)
+
+	FT_Node_Plugin(void);
+	~FT_Node_Plugin(void);
+
+	PluginReceiveResult OnReceive(Packet *packet);
+
+	void RegisterProcess(FT_Node_Process* handler);
+
+private:
+	std::map<FT_MessageTypesNode,FT_Node_Process*>	_Handler;
+
 };
 
 }

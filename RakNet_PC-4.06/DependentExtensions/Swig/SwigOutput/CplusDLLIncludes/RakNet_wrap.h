@@ -167,5 +167,23 @@ private:
     void swig_init_callbacks();
 };
 
+class SwigDirector_FT_Node_Process : public RakNet::FT_Node_Process, public Swig::Director {
+
+public:
+    SwigDirector_FT_Node_Process();
+    virtual ~SwigDirector_FT_Node_Process();
+    virtual FT_MessageTypesNode GetNodeType();
+    virtual void OnProcess(RakNet::BitStream *bsIn);
+
+    typedef int (SWIGSTDCALL* SWIG_Callback0_t)();
+    typedef void (SWIGSTDCALL* SWIG_Callback1_t)(void *);
+    void swig_connect_director(SWIG_Callback0_t callbackGetNodeType, SWIG_Callback1_t callbackOnProcess);
+
+private:
+    SWIG_Callback0_t swig_callbackGetNodeType;
+    SWIG_Callback1_t swig_callbackOnProcess;
+    void swig_init_callbacks();
+};
+
 
 #endif

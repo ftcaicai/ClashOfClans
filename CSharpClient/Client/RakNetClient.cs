@@ -80,7 +80,7 @@ namespace Client
         private Thread _ReadThread;
         private bool _RequestReadThreadStop;
         private bool _bConnectSuccess;
-        private System.Action<Packet> processMessageHandler;
+        private System.Action<RakPeerInterface,Packet> processMessageHandler;
 
         public RakNetClientState ClientState
         {
@@ -94,7 +94,7 @@ namespace Client
             }
         }
 
-        public RakNetClient(string ip, ushort port, System.Action<Packet> msgHandler)
+        public RakNetClient(string ip, ushort port, System.Action<RakPeerInterface,Packet> msgHandler)
         {
             _sServerIP = ip;
             _nServerPort = port;
@@ -188,7 +188,7 @@ namespace Client
 
         void ProcessMessage (Packet packet){
             if ( processMessageHandler != null){
-                processMessageHandler(packet);
+                processMessageHandler(_peer, packet);
             }
         }
 

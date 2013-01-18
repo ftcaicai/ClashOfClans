@@ -8,6 +8,7 @@
 using namespace RakNet;
 
 STATIC_FACTORY_DEFINITIONS(FT_ConnectProcess,FT_ConnectProcess);
+STATIC_FACTORY_DEFINITIONS(FT_Node_Plugin,FT_Node_Plugin);
 
 FT_ConnectProcess::FT_ConnectProcess(){
 	resultHandler = 0;
@@ -49,4 +50,48 @@ PluginReceiveResult FT_ConnectProcess::OnReceive(Packet *packet){
 
 void FT_ConnectProcess::OnRakPeerShutdown() {
 
+}
+
+FT_Node_Process::FT_Node_Process (){
+
+}
+
+FT_Node_Process::~FT_Node_Process (){
+
+}
+
+FT_Node_Plugin::FT_Node_Plugin (){
+
+}
+
+FT_Node_Plugin::~FT_Node_Plugin() {
+	std::map<FT_MessageTypesNode,FT_Node_Process*>::iterator it;
+	for (it = _Handler.begin(); it != _Handler.end(); it++)
+	{
+		FT_Node_Process::DestroyInstance(it->second);
+	}
+}
+
+PluginReceiveResult FT_Node_Plugin::OnReceive(Packet *packet){
+
+	if (packet->data[0] == ID_SERVER_LOGIN) {
+		FT_MessageTypesNode  typeNode = (FT_MessageTypesNode)packet->data[1];
+
+		std::map<FT_MessageTypesNode,FT_Node_Process*>::iterator it = _Handler.find(typeNode);
+		if (it != _Handler.end()){
+			BitStream bsIn(packet->data, packet->length, false);
+			bsIn.IgnoreBits(sizeof(RakNet::MessageID));
+			bsIn.IgnoreBits(sizeof(RakNet::FT_MessageTypesNode));
+			FT_Node_Process* hand = it->second;
+			hand->OnProcess(&bsIn);
+
+			return RR_STOP_PROCESSING;
+		}
+	}
+
+	return RR_CONTINUE_PROCESSING;
+}
+
+void FT_Node_Plugin::RegisterProcess(FT_Node_Process* handler){
+	_Handler.insert(std::make_pair(handler->GetNodeType(), handler));
 }

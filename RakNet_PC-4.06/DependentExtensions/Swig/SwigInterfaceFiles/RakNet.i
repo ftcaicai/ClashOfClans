@@ -26,6 +26,9 @@
 // FtLover Add at 2012-12-29 01:00:26
 %feature("director") FT_ConnectProcessResultHandler;
 
+// FtLover Add at 2013Äê1ÔÂ18ÈÕ 12:55:12
+%feature("director") FT_Node_Process;
+
 %nestedworkaround DataStructures::Table::Row;
 %nestedworkaround DataStructures::Table::Cell; 
 %nestedworkaround DataStructures::Table::FilterQuery;

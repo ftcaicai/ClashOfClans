@@ -2,6 +2,8 @@
 #define __H_MYSQL_TEST
 
 #include "stdafx.h"
+#include "Assert.h"
+#include "OtlDefine.h"
 
 class row{
 public:

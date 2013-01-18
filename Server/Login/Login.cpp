@@ -1,9 +1,13 @@
 #include "stdafx.h"
 #include "LoginIncludes.h"
+#include "RakPeerInterface.h"
+#include "BitStream.h"
 #include "RakSleep.h"
 #include "FT_ConnectProcess.h"
 #include "FT_DataStruct.h"
+#include "RakNetMessageTest.h"
 
+using namespace RakNet;
 
 bool _bQuit = false;
 
@@ -132,6 +136,13 @@ VOID _TestMySQLConnect (){
 }
 
 
+void RakNetMessageTestInit (RakPeerInterface *peer){
+	FT_Node_Plugin* test = FT_Node_Plugin::GetInstance();
+	FT_Node_Process* processa = Test_ProcessA::GetInstance();
+	test->RegisterProcess(processa);
+	peer->AttachPlugin(test);
+}
+
 int main (void){
 
 	Init (); 
@@ -152,6 +163,8 @@ int main (void){
 	process->SetResultHandler( pluginHandler );
 	peer->AttachPlugin( process );
 	*/
+
+	RakNetMessageTestInit(peer);
 
 	printf_s("Server Listen At : %d , MaxConnect: %d \n", g_Config.m_LoginInfo.m_ServerPort, g_Config.m_LoginInfo.m_MaxConnectCount);
 	

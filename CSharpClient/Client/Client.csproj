@@ -73,6 +73,10 @@
     <Compile Include="SwigCSharpOutput\FT_ConnectProcessResultHandler.cs" />
     <Compile Include="SwigCSharpOutput\FT_ConnectProcessResultHandlerTest.cs" />
     <Compile Include="SwigCSharpOutput\FT_EUnit.cs" />
+    <Compile Include="SwigCSharpOutput\FT_MessageTypes.cs" />
+    <Compile Include="SwigCSharpOutput\FT_MessageTypesNode.cs" />
+    <Compile Include="SwigCSharpOutput\FT_Node_Plugin.cs" />
+    <Compile Include="SwigCSharpOutput\FT_Node_Process.cs" />
     <Compile Include="SwigCSharpOutput\FT_UnitData.cs" />
     <Compile Include="SwigCSharpOutput\FullyConnectedMesh2.cs" />
     <Compile Include="SwigCSharpOutput\IncrementalReadInterface.cs" />

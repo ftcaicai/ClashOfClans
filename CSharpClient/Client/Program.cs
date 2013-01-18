@@ -45,7 +45,7 @@ namespace Client
             }
         }
 
-        static void ProcessMessage(RakNet.Packet packet)
+        static void ProcessMessage(RakPeerInterface peer, RakNet.Packet packet)
         {
             if (packet != null)
             {
@@ -57,6 +57,13 @@ namespace Client
                     FT_UnitData data = new FT_UnitData();
                     data.Serialize(false, receiveBitStream);
                     Log.Debug(" data.nGrid_x: " + data.nGrid_x);
+
+                    BitStream writeBitStream = new BitStream();
+                    writeBitStream.Write((byte)FT_MessageTypes.ID_SERVER_LOGIN);
+                    writeBitStream.Write((byte)FT_MessageTypesNode.NODE_FT_TEST1);
+                    data.Serialize(true, writeBitStream);
+                    uint sendLength = peer.Send(writeBitStream, PacketPriority.HIGH_PRIORITY, PacketReliability.RELIABLE_ORDERED, (char)0, packet.systemAddress, false);
+                    Log.Debug("SendLength = " + sendLength);
                 }
             }
         }
