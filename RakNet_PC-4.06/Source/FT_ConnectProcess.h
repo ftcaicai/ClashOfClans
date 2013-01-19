@@ -1,7 +1,7 @@
 #ifndef __H_CONNECT_PROCESS
 #define __H_CONNECT_PROCESS
 #include <stdio.h>
-#include <map>
+#include <vector>
 #include "Export.h"
 #include "RakNetTypes.h"
 #include "PluginInterface2.h"
@@ -32,40 +32,9 @@ public:
 
 	virtual void ReceiveLog2 () = 0;
 
-	virtual PluginReceiveResult OnReceive(Packet *packet) { return RR_CONTINUE_PROCESSING; }
-};
+	virtual PluginReceiveResult OnReceive(Packet *packet) = 0;
 
-class FT_ConnectProcessResultHandlerTest : public FT_ConnectProcessResultHandler {
-
-public:
-
-	FT_ConnectProcessResultHandlerTest(void){}
-	virtual ~FT_ConnectProcessResultHandlerTest(void){}
-
-public:
-	virtual void OnConnectedToServer () {
-		printf_s("OnConnectedToServer");
-	}
-
-	virtual void OnFailedToConnect () {
-		printf_s("OnFailedToConnect");
-	}
-
-	virtual void OnLostConnection () {
-		printf_s("OnLostConnection");
-	}
-
-	virtual void OnDisconnectedFromServer () {
-		printf_s("OnDisconnectedFromServer");
-	}
-
-	virtual void DebugReceive (int flag) {
-		printf_s("DebugReceive : %d \n", flag);
-	}
-
-	virtual void ReceiveLog () {
-		printf_s("ReceiveLog");
-	}
+	virtual PluginReceiveResult OnRead(BitStream *bsIn) = 0;
 };
 
 class RAK_DLL_EXPORT FT_ConnectProcess : public PluginInterface2
@@ -99,9 +68,13 @@ public:
 
 	virtual void OnProcess (BitStream* bsIn) {}
 
+	void SetRakPeerInterface( RakPeerInterface *ptr );
+
+private:
+	RakPeerInterface*	_peer;
 };
 
-class FT_Node_Plugin : public PluginInterface2
+class RAK_DLL_EXPORT FT_Node_Plugin : public PluginInterface2
 {
 public:
 
@@ -110,12 +83,18 @@ public:
 	FT_Node_Plugin(void);
 	~FT_Node_Plugin(void);
 
-	PluginReceiveResult OnReceive(Packet *packet);
+	virtual PluginReceiveResult OnReceive(Packet *packet);
 
 	void RegisterProcess(FT_Node_Process* handler);
+	
+	uint32_t Send(FT_DataBase* data, const AddressOrGUID systemIdentifier);
+
+	uint32_t Send(FT_DataBase* data, PacketPriority priority, PacketReliability reliability, char orderingChannel, const AddressOrGUID systemIdentifier);
+
+	virtual void PrintLog (const char* msg){}
 
 private:
-	std::map<FT_MessageTypesNode,FT_Node_Process*>	_Handler;
+	std::vector<FT_Node_Process*>	_Handler;
 
 };
 

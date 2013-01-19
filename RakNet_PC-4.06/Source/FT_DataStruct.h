@@ -23,7 +23,17 @@ namespace RakNet{
 		NODE_FT_TEST1,
 	};
 
-	struct FT_UnitData {
+	struct FT_DataBase {
+	public:
+		FT_DataBase () {}
+		virtual ~FT_DataBase () {}
+
+		virtual FT_MessageTypesNode NodeType (){ return NODE_FT_None; }
+
+		virtual void Serialize (bool writeToBitstream, RakNet::BitStream* bs) = 0;
+	};
+
+	struct FT_UnitData : public FT_DataBase {
 	public:
 		unsigned int	iID;
 		unsigned char	iLevel;
@@ -31,6 +41,10 @@ namespace RakNet{
 		unsigned char	nGridSize;
 		unsigned char	nGrid_x;
 		unsigned char	nGrid_y;
+		RakString		sName;
+		RakString		sInfo;
+
+		FT_MessageTypesNode NodeType (){ return NODE_FT_TEST1; }
 
 		void Serialize(bool writeToBitstream, RakNet::BitStream* bs);
 	};

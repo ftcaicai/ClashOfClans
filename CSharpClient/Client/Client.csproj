@@ -71,7 +71,7 @@
     <Compile Include="SwigCSharpOutput\FLP_Printf.cs" />
     <Compile Include="SwigCSharpOutput\FT_ConnectProcess.cs" />
     <Compile Include="SwigCSharpOutput\FT_ConnectProcessResultHandler.cs" />
-    <Compile Include="SwigCSharpOutput\FT_ConnectProcessResultHandlerTest.cs" />
+    <Compile Include="SwigCSharpOutput\FT_DataBase.cs" />
     <Compile Include="SwigCSharpOutput\FT_EUnit.cs" />
     <Compile Include="SwigCSharpOutput\FT_MessageTypes.cs" />
     <Compile Include="SwigCSharpOutput\FT_MessageTypesNode.cs" />

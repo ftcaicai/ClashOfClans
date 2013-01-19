@@ -1,7 +1,7 @@
 #include "RakNetMessageTest.h"
 #include "RakPeerInterface.h"
 
-STATIC_FACTORY_DEFINITIONS(FT_Node_Process, Test_ProcessA);
+STATIC_FACTORY_DEFINITIONS(Test_ProcessA, Test_ProcessA);
 
 Test_ProcessA::Test_ProcessA (){
 

@@ -46,7 +46,10 @@ void ProcessRakNetMessage (RakPeerInterface *peer){
 					ft_data.nGrid_x = 5;
 					ft_data.nGrid_y = 5;
 					ft_data.nGridSize = 5;
+					ft_data.sName = "x";
+					ft_data.sInfo = "xx";
 
+					bsWrite.Write((RakNet::MessageID)ID_SERVER_LOGIN);
 					bsWrite.Write((RakNet::MessageID)ID_FT_TEST1);
 					ft_data.Serialize(true, &bsWrite);
 					peer->Send(&bsWrite, HIGH_PRIORITY,RELIABLE_ORDERED, 0, packet->systemAddress,false);

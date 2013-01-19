@@ -64,6 +64,10 @@ public class FT_Node_Process : IDisposable {
     if (SwigDerivedClassHasMethod("OnProcess", swigMethodTypes1)) RakNetPINVOKE.FT_Node_Process_OnProcessSwigExplicitFT_Node_Process(swigCPtr, BitStream.getCPtr(bsIn)); else RakNetPINVOKE.FT_Node_Process_OnProcess(swigCPtr, BitStream.getCPtr(bsIn));
   }
 
+  public void SetRakPeerInterface(RakPeerInterface ptr) {
+    RakNetPINVOKE.FT_Node_Process_SetRakPeerInterface(swigCPtr, RakPeerInterface.getCPtr(ptr));
+  }
+
   private void SwigDirectorConnect() {
     if (SwigDerivedClassHasMethod("GetNodeType", swigMethodTypes0))
       swigDelegate0 = new SwigDelegateFT_Node_Process_0(SwigDirectorGetNodeType);

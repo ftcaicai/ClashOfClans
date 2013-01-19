@@ -9,4 +9,6 @@ void FT_UnitData::Serialize(bool writeToBitstream, RakNet::BitStream* bs){
 	bs->Serialize(writeToBitstream, nGridSize);
 	bs->Serialize(writeToBitstream, nGrid_x);
 	bs->Serialize(writeToBitstream, nGrid_y);
+	bs->Serialize(writeToBitstream, sName);
+	bs->Serialize(writeToBitstream, sInfo);
 }

@@ -11,12 +11,10 @@ namespace RakNet {
 using System;
 using System.Runtime.InteropServices;
 
-public class FT_UnitData : IDisposable {
+public class FT_UnitData : FT_DataBase {
   private HandleRef swigCPtr;
-  protected bool swigCMemOwn;
 
-  internal FT_UnitData(IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
+  internal FT_UnitData(IntPtr cPtr, bool cMemoryOwn) : base(RakNetPINVOKE.FT_UnitData_SWIGUpcast(cPtr), cMemoryOwn) {
     swigCPtr = new HandleRef(this, cPtr);
   }
 
@@ -28,7 +26,7 @@ public class FT_UnitData : IDisposable {
     Dispose();
   }
 
-  public virtual void Dispose() {
+  public override void Dispose() {
     lock(this) {
       if (swigCPtr.Handle != IntPtr.Zero) {
         if (swigCMemOwn) {
@@ -38,6 +36,7 @@ public class FT_UnitData : IDisposable {
         swigCPtr = new HandleRef(null, IntPtr.Zero);
       }
       GC.SuppressFinalize(this);
+      base.Dispose();
     }
   }
 
@@ -101,7 +100,34 @@ public class FT_UnitData : IDisposable {
     } 
   }
 
-  public void Serialize(bool writeToBitstream, BitStream bs) {
+  public RakString sName {
+    set {
+      RakNetPINVOKE.FT_UnitData_sName_set(swigCPtr, RakString.getCPtr(value));
+    } 
+    get {
+      IntPtr cPtr = RakNetPINVOKE.FT_UnitData_sName_get(swigCPtr);
+      RakString ret = (cPtr == IntPtr.Zero) ? null : new RakString(cPtr, false);
+      return ret;
+    } 
+  }
+
+  public RakString sInfo {
+    set {
+      RakNetPINVOKE.FT_UnitData_sInfo_set(swigCPtr, RakString.getCPtr(value));
+    } 
+    get {
+      IntPtr cPtr = RakNetPINVOKE.FT_UnitData_sInfo_get(swigCPtr);
+      RakString ret = (cPtr == IntPtr.Zero) ? null : new RakString(cPtr, false);
+      return ret;
+    } 
+  }
+
+  public override FT_MessageTypesNode NodeType() {
+    FT_MessageTypesNode ret = (FT_MessageTypesNode)RakNetPINVOKE.FT_UnitData_NodeType(swigCPtr);
+    return ret;
+  }
+
+  public override void Serialize(bool writeToBitstream, BitStream bs) {
     RakNetPINVOKE.FT_UnitData_Serialize(swigCPtr, writeToBitstream, BitStream.getCPtr(bs));
   }
 

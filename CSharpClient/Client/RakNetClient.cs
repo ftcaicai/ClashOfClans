@@ -66,9 +66,13 @@ namespace Client
 
             public override void DebugReceive(int flag)
             {
-                Log.Debug(flag.ToString());
+                Log.Debug("DebugReceive:" + (RakNet.DefaultMessageIDTypes)flag);
             }
 
+            public override PluginReceiveResult OnRead(BitStream bsIn)
+            {
+                return PluginReceiveResult.RR_CONTINUE_PROCESSING;
+            }
         }
 
         private RakNet.RakPeerInterface _peer;
@@ -139,7 +143,7 @@ namespace Client
 
                     RakNet.FT_ConnectProcess process = new RakNet.FT_ConnectProcess();
                     process.SetResultHandler(new RakNetClientResultHandler(this));
-                    AttachInterface2(process);
+                    // AttachInterface2(process);
 
                     ConnectionAttemptResult connectResult = _peer.Connect(_sServerIP, _nServerPort, "", 0);
                     Log.Debug("Connect Result: " + connectResult);

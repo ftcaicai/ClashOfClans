@@ -16,6 +16,7 @@ using namespace RakNet;
 
 class Test_ProcessA : public FT_Node_Process {
 public:
+	STATIC_FACTORY_DECLARATIONS(Test_ProcessA)
 
 	Test_ProcessA ();
 	virtual ~Test_ProcessA();
