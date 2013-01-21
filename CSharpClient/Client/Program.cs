@@ -15,17 +15,23 @@ namespace Client
 
         public override void OnProcess(BitStream bsIn)
         {
+            Log.Debug("FT_Node_Process_Test1.OnProcess :");
             FT_UnitData unitData = new FT_UnitData();
             unitData.Serialize(false, bsIn);
-            Log.Debug("FT_Node_Process_Test1.OnProcess :");
         }
 
     }
 
-    class FT_Node_Pluginx : FT_Node_Plugin{
-        public override void PrintLog(string msg)
+    class FT_Node_Process_Debug : FT_ConnectProcessResultHandler{
+
+        public override void DebugReceive(int flag)
         {
-            Log.Debug(msg);
+            Log.Debug(" FT_Node_Process_Debug: " + ((FT_MessageTypes)flag).ToString());
+        }
+
+        public override void ReceiveLog(string str)
+        {
+            Log.Debug("FT_Node_Process_Debug.ReceiveLog : " + str);
         }
     }
 
@@ -37,7 +43,7 @@ namespace Client
 
         private static XNetWork2 _client2;
         private static RakNetClient client;
-        public static FT_Node_Pluginx nodePlugin;
+        public static FT_Node_Plugin nodePlugin;
         private static FT_Node_Process_Test1 processTest1;
 
         static void Main(string[] args)
@@ -51,11 +57,12 @@ namespace Client
 
         static void _RakNetClient (){
             client = new RakNetClient(serverIP, serverPort, ProcessMessage);
-            // client = new RakNetClient(serverIP, serverPort, null);
             client.Start();
-            nodePlugin = new FT_Node_Pluginx();
-            // processTest1 = new FT_Node_Process_Test1();
-            // nodePlugin.RegisterProcess(processTest1);
+            nodePlugin = new FT_Node_Plugin();
+            FT_Node_Process_Debug pluginDebug = new FT_Node_Process_Debug();
+            nodePlugin.SetResultHandler(pluginDebug);
+            processTest1 = new FT_Node_Process_Test1();
+            nodePlugin.RegisterProcess(processTest1);
             client.AttachInterface2(nodePlugin);
         }
 

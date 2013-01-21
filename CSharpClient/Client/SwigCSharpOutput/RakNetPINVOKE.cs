@@ -4755,11 +4755,11 @@ class RakNetPINVOKE {
   [DllImport("RakNet", EntryPoint="CSharp_FT_ConnectProcessResultHandler_DebugReceive")]
   public static extern void FT_ConnectProcessResultHandler_DebugReceive(HandleRef jarg1, int jarg2);
 
-  [DllImport("RakNet", EntryPoint="CSharp_FT_ConnectProcessResultHandler_ReceiveLog")]
-  public static extern void FT_ConnectProcessResultHandler_ReceiveLog(HandleRef jarg1);
+  [DllImport("RakNet", EntryPoint="CSharp_FT_ConnectProcessResultHandler_ReceiveLog__SWIG_0")]
+  public static extern void FT_ConnectProcessResultHandler_ReceiveLog__SWIG_0(HandleRef jarg1);
 
-  [DllImport("RakNet", EntryPoint="CSharp_FT_ConnectProcessResultHandler_ReceiveLog2")]
-  public static extern void FT_ConnectProcessResultHandler_ReceiveLog2(HandleRef jarg1);
+  [DllImport("RakNet", EntryPoint="CSharp_FT_ConnectProcessResultHandler_ReceiveLog__SWIG_1")]
+  public static extern void FT_ConnectProcessResultHandler_ReceiveLog__SWIG_1(HandleRef jarg1, string jarg2);
 
   [DllImport("RakNet", EntryPoint="CSharp_FT_ConnectProcessResultHandler_OnRead")]
   public static extern int FT_ConnectProcessResultHandler_OnRead(HandleRef jarg1, HandleRef jarg2);
@@ -4833,8 +4833,8 @@ class RakNetPINVOKE {
   [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Plugin_Send__SWIG_1")]
   public static extern uint FT_Node_Plugin_Send__SWIG_1(HandleRef jarg1, HandleRef jarg2, int jarg3, int jarg4, char jarg5, HandleRef jarg6);
 
-  [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Plugin_PrintLog")]
-  public static extern void FT_Node_Plugin_PrintLog(HandleRef jarg1, string jarg2);
+  [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Plugin_SetResultHandler")]
+  public static extern void FT_Node_Plugin_SetResultHandler(HandleRef jarg1, HandleRef jarg2);
 
   [DllImport("RakNet", EntryPoint="CSharp_delete_FT_DataBase")]
   public static extern void delete_FT_DataBase(HandleRef jarg1);

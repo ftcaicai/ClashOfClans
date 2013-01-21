@@ -144,7 +144,7 @@ public:
     virtual void OnDisconnectedFromServer();
     virtual void DebugReceive(int flag);
     virtual void ReceiveLog();
-    virtual void ReceiveLog2();
+    virtual void ReceiveLog(char const *str);
     virtual RakNet::PluginReceiveResult OnReceive(RakNet::Packet *packet);
     virtual RakNet::PluginReceiveResult OnRead(RakNet::BitStream *bsIn);
 
@@ -154,9 +154,9 @@ public:
     typedef void (SWIGSTDCALL* SWIG_Callback3_t)();
     typedef void (SWIGSTDCALL* SWIG_Callback4_t)(int);
     typedef void (SWIGSTDCALL* SWIG_Callback5_t)();
-    typedef void (SWIGSTDCALL* SWIG_Callback6_t)();
+    typedef void (SWIGSTDCALL* SWIG_Callback6_t)(char *);
     typedef int (SWIGSTDCALL* SWIG_Callback7_t)(void *);
-    void swig_connect_director(SWIG_Callback0_t callbackOnConnectedToServer, SWIG_Callback1_t callbackOnFailedToConnect, SWIG_Callback2_t callbackOnLostConnection, SWIG_Callback3_t callbackOnDisconnectedFromServer, SWIG_Callback4_t callbackDebugReceive, SWIG_Callback5_t callbackReceiveLog, SWIG_Callback6_t callbackReceiveLog2, SWIG_Callback7_t callbackOnRead);
+    void swig_connect_director(SWIG_Callback0_t callbackOnConnectedToServer, SWIG_Callback1_t callbackOnFailedToConnect, SWIG_Callback2_t callbackOnLostConnection, SWIG_Callback3_t callbackOnDisconnectedFromServer, SWIG_Callback4_t callbackDebugReceive, SWIG_Callback5_t callbackReceiveLog__SWIG_0, SWIG_Callback6_t callbackReceiveLog__SWIG_1, SWIG_Callback7_t callbackOnRead);
 
 private:
     SWIG_Callback0_t swig_callbackOnConnectedToServer;
@@ -164,8 +164,8 @@ private:
     SWIG_Callback2_t swig_callbackOnLostConnection;
     SWIG_Callback3_t swig_callbackOnDisconnectedFromServer;
     SWIG_Callback4_t swig_callbackDebugReceive;
-    SWIG_Callback5_t swig_callbackReceiveLog;
-    SWIG_Callback6_t swig_callbackReceiveLog2;
+    SWIG_Callback5_t swig_callbackReceiveLog__SWIG_0;
+    SWIG_Callback6_t swig_callbackReceiveLog__SWIG_1;
     SWIG_Callback7_t swig_callbackOnRead;
     void swig_init_callbacks();
 };
@@ -176,10 +176,10 @@ public:
     SwigDirector_FT_Node_Process();
     virtual ~SwigDirector_FT_Node_Process();
     virtual FT_MessageTypesNode GetNodeType();
-    virtual void OnProcess(RakNet::BitStream *bsIn);
+    virtual void OnProcess(RakNet::BitStream *bsIn, RakNet::AddressOrGUID const systemIdentifier);
 
     typedef int (SWIGSTDCALL* SWIG_Callback0_t)();
-    typedef void (SWIGSTDCALL* SWIG_Callback1_t)(void *);
+    typedef void (SWIGSTDCALL* SWIG_Callback1_t)(void *, void *);
     void swig_connect_director(SWIG_Callback0_t callbackGetNodeType, SWIG_Callback1_t callbackOnProcess);
 
 private:

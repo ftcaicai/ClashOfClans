@@ -23,7 +23,7 @@ public:
 
 	virtual FT_MessageTypesNode GetNodeType() { return NODE_FT_TEST1; }
 
-	virtual void OnProcess (BitStream* bsIn);
+	virtual void OnProcess (BitStream* bsIn, const AddressOrGUID systemIdentifier);
 
 };
 

@@ -1,11 +1,11 @@
 #ifndef __H_CONNECT_PROCESS
 #define __H_CONNECT_PROCESS
 #include <stdio.h>
-#include <vector>
 #include "Export.h"
 #include "RakNetTypes.h"
 #include "PluginInterface2.h"
 #include "FT_DataStruct.h"
+#include "DS_List.h"
 
 namespace RakNet{
 
@@ -30,7 +30,7 @@ public:
 
 	virtual void ReceiveLog () = 0;
 
-	virtual void ReceiveLog2 () = 0;
+	virtual void ReceiveLog (const char* str) = 0;
 
 	virtual PluginReceiveResult OnReceive(Packet *packet) = 0;
 
@@ -66,7 +66,7 @@ public:
 
 	virtual FT_MessageTypesNode GetNodeType() { return NODE_FT_None; }
 
-	virtual void OnProcess (BitStream* bsIn) {}
+	virtual void OnProcess (BitStream* bsIn, const AddressOrGUID systemIdentifier) {}
 
 	void SetRakPeerInterface( RakPeerInterface *ptr );
 
@@ -86,16 +86,18 @@ public:
 	virtual PluginReceiveResult OnReceive(Packet *packet);
 
 	void RegisterProcess(FT_Node_Process* handler);
+
+	void RegisterProcess(FT_MessageTypesNode type);
 	
 	uint32_t Send(FT_DataBase* data, const AddressOrGUID systemIdentifier);
 
 	uint32_t Send(FT_DataBase* data, PacketPriority priority, PacketReliability reliability, char orderingChannel, const AddressOrGUID systemIdentifier);
 
-	virtual void PrintLog (const char* msg){}
+	void SetResultHandler(FT_ConnectProcessResultHandler *rh);
 
 private:
-	std::vector<FT_Node_Process*>	_Handler;
-
+	DataStructures::List<FT_Node_Process*> _Handlers;
+	FT_ConnectProcessResultHandler *resultHandler;
 };
 
 }

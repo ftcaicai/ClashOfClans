@@ -37,6 +37,7 @@ void ProcessRakNetMessage (RakPeerInterface *peer){
 			case ID_NEW_INCOMING_CONNECTION:
 				printf_s("A remote system has successfully connected.\n");
 				{
+					/*
 					FT_UnitData ft_data;
 					RakNet::BitStream bsWrite;
 
@@ -50,9 +51,10 @@ void ProcessRakNetMessage (RakPeerInterface *peer){
 					ft_data.sInfo = "xx";
 
 					bsWrite.Write((RakNet::MessageID)ID_SERVER_LOGIN);
-					bsWrite.Write((RakNet::MessageID)ID_FT_TEST1);
+					bsWrite.Write((RakNet::MessageID)NODE_FT_TEST1);
 					ft_data.Serialize(true, &bsWrite);
 					peer->Send(&bsWrite, HIGH_PRIORITY,RELIABLE_ORDERED, 0, packet->systemAddress,false);
+					*/
 				}
 
 				break;

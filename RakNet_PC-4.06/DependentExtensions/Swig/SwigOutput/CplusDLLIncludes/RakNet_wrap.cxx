@@ -1358,18 +1358,21 @@ void SwigDirector_FT_ConnectProcessResultHandler::DebugReceive(int flag) {
 }
 
 void SwigDirector_FT_ConnectProcessResultHandler::ReceiveLog() {
-  if (!swig_callbackReceiveLog) {
+  if (!swig_callbackReceiveLog__SWIG_0) {
     throw Swig::DirectorPureVirtualException("RakNet::FT_ConnectProcessResultHandler::ReceiveLog");
   } else {
-    swig_callbackReceiveLog();
+    swig_callbackReceiveLog__SWIG_0();
   }
 }
 
-void SwigDirector_FT_ConnectProcessResultHandler::ReceiveLog2() {
-  if (!swig_callbackReceiveLog2) {
-    throw Swig::DirectorPureVirtualException("RakNet::FT_ConnectProcessResultHandler::ReceiveLog2");
+void SwigDirector_FT_ConnectProcessResultHandler::ReceiveLog(char const *str) {
+  char * jstr = 0 ;
+  
+  if (!swig_callbackReceiveLog__SWIG_1) {
+    throw Swig::DirectorPureVirtualException("RakNet::FT_ConnectProcessResultHandler::ReceiveLog");
   } else {
-    swig_callbackReceiveLog2();
+    jstr = SWIG_csharp_string_callback((const char *)str); 
+    swig_callbackReceiveLog__SWIG_1(jstr);
   }
 }
 
@@ -1392,14 +1395,14 @@ RakNet::PluginReceiveResult SwigDirector_FT_ConnectProcessResultHandler::OnRead(
   return c_result;
 }
 
-void SwigDirector_FT_ConnectProcessResultHandler::swig_connect_director(SWIG_Callback0_t callbackOnConnectedToServer, SWIG_Callback1_t callbackOnFailedToConnect, SWIG_Callback2_t callbackOnLostConnection, SWIG_Callback3_t callbackOnDisconnectedFromServer, SWIG_Callback4_t callbackDebugReceive, SWIG_Callback5_t callbackReceiveLog, SWIG_Callback6_t callbackReceiveLog2, SWIG_Callback7_t callbackOnRead) {
+void SwigDirector_FT_ConnectProcessResultHandler::swig_connect_director(SWIG_Callback0_t callbackOnConnectedToServer, SWIG_Callback1_t callbackOnFailedToConnect, SWIG_Callback2_t callbackOnLostConnection, SWIG_Callback3_t callbackOnDisconnectedFromServer, SWIG_Callback4_t callbackDebugReceive, SWIG_Callback5_t callbackReceiveLog__SWIG_0, SWIG_Callback6_t callbackReceiveLog__SWIG_1, SWIG_Callback7_t callbackOnRead) {
   swig_callbackOnConnectedToServer = callbackOnConnectedToServer;
   swig_callbackOnFailedToConnect = callbackOnFailedToConnect;
   swig_callbackOnLostConnection = callbackOnLostConnection;
   swig_callbackOnDisconnectedFromServer = callbackOnDisconnectedFromServer;
   swig_callbackDebugReceive = callbackDebugReceive;
-  swig_callbackReceiveLog = callbackReceiveLog;
-  swig_callbackReceiveLog2 = callbackReceiveLog2;
+  swig_callbackReceiveLog__SWIG_0 = callbackReceiveLog__SWIG_0;
+  swig_callbackReceiveLog__SWIG_1 = callbackReceiveLog__SWIG_1;
   swig_callbackOnRead = callbackOnRead;
 }
 
@@ -1409,8 +1412,8 @@ void SwigDirector_FT_ConnectProcessResultHandler::swig_init_callbacks() {
   swig_callbackOnLostConnection = 0;
   swig_callbackOnDisconnectedFromServer = 0;
   swig_callbackDebugReceive = 0;
-  swig_callbackReceiveLog = 0;
-  swig_callbackReceiveLog2 = 0;
+  swig_callbackReceiveLog__SWIG_0 = 0;
+  swig_callbackReceiveLog__SWIG_1 = 0;
   swig_callbackOnRead = 0;
 }
 
@@ -1436,15 +1439,17 @@ FT_MessageTypesNode SwigDirector_FT_Node_Process::GetNodeType() {
   return c_result;
 }
 
-void SwigDirector_FT_Node_Process::OnProcess(RakNet::BitStream *bsIn) {
+void SwigDirector_FT_Node_Process::OnProcess(RakNet::BitStream *bsIn, RakNet::AddressOrGUID const systemIdentifier) {
   void * jbsIn = 0 ;
+  void * jsystemIdentifier  ;
   
   if (!swig_callbackOnProcess) {
-    RakNet::FT_Node_Process::OnProcess(bsIn);
+    RakNet::FT_Node_Process::OnProcess(bsIn,systemIdentifier);
     return;
   } else {
     jbsIn = (void *) bsIn; 
-    swig_callbackOnProcess(jbsIn);
+    jsystemIdentifier = (void *)&systemIdentifier; 
+    swig_callbackOnProcess(jbsIn, jsystemIdentifier);
   }
 }
 
@@ -22201,7 +22206,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_FT_ConnectProcessResultHandler_DebugReceive(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_FT_ConnectProcessResultHandler_ReceiveLog(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_ConnectProcessResultHandler_ReceiveLog__SWIG_0(void * jarg1) {
   RakNet::FT_ConnectProcessResultHandler *arg1 = (RakNet::FT_ConnectProcessResultHandler *) 0 ;
   
   arg1 = (RakNet::FT_ConnectProcessResultHandler *)jarg1; 
@@ -22209,11 +22214,13 @@ SWIGEXPORT void SWIGSTDCALL CSharp_FT_ConnectProcessResultHandler_ReceiveLog(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_FT_ConnectProcessResultHandler_ReceiveLog2(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_ConnectProcessResultHandler_ReceiveLog__SWIG_1(void * jarg1, char * jarg2) {
   RakNet::FT_ConnectProcessResultHandler *arg1 = (RakNet::FT_ConnectProcessResultHandler *) 0 ;
+  char *arg2 = (char *) 0 ;
   
   arg1 = (RakNet::FT_ConnectProcessResultHandler *)jarg1; 
-  (arg1)->ReceiveLog2();
+  arg2 = (char *)jarg2; 
+  (arg1)->ReceiveLog((char const *)arg2);
 }
 
 
@@ -22346,23 +22353,39 @@ SWIGEXPORT int SWIGSTDCALL CSharp_FT_Node_Process_GetNodeTypeSwigExplicitFT_Node
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_FT_Node_Process_OnProcess(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_Node_Process_OnProcess(void * jarg1, void * jarg2, void * jarg3) {
   RakNet::FT_Node_Process *arg1 = (RakNet::FT_Node_Process *) 0 ;
   RakNet::BitStream *arg2 = (RakNet::BitStream *) 0 ;
+  RakNet::AddressOrGUID arg3 ;
+  RakNet::AddressOrGUID const *argp3 ;
   
   arg1 = (RakNet::FT_Node_Process *)jarg1; 
   arg2 = (RakNet::BitStream *)jarg2; 
-  (arg1)->OnProcess(arg2);
+  argp3 = (RakNet::AddressOrGUID *)jarg3; 
+  if (!argp3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null RakNet::AddressOrGUID const", 0);
+    return ;
+  }
+  arg3 = *argp3; 
+  (arg1)->OnProcess(arg2,arg3);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_FT_Node_Process_OnProcessSwigExplicitFT_Node_Process(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_Node_Process_OnProcessSwigExplicitFT_Node_Process(void * jarg1, void * jarg2, void * jarg3) {
   RakNet::FT_Node_Process *arg1 = (RakNet::FT_Node_Process *) 0 ;
   RakNet::BitStream *arg2 = (RakNet::BitStream *) 0 ;
+  RakNet::AddressOrGUID arg3 ;
+  RakNet::AddressOrGUID const *argp3 ;
   
   arg1 = (RakNet::FT_Node_Process *)jarg1; 
   arg2 = (RakNet::BitStream *)jarg2; 
-  (arg1)->RakNet::FT_Node_Process::OnProcess(arg2);
+  argp3 = (RakNet::AddressOrGUID *)jarg3; 
+  if (!argp3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null RakNet::AddressOrGUID const", 0);
+    return ;
+  }
+  arg3 = *argp3; 
+  (arg1)->RakNet::FT_Node_Process::OnProcess(arg2,arg3);
 }
 
 
@@ -22481,13 +22504,13 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_FT_Node_Plugin_Send__SWIG_1(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_FT_Node_Plugin_PrintLog(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_Node_Plugin_SetResultHandler(void * jarg1, void * jarg2) {
   RakNet::FT_Node_Plugin *arg1 = (RakNet::FT_Node_Plugin *) 0 ;
-  char *arg2 = (char *) 0 ;
+  RakNet::FT_ConnectProcessResultHandler *arg2 = (RakNet::FT_ConnectProcessResultHandler *) 0 ;
   
   arg1 = (RakNet::FT_Node_Plugin *)jarg1; 
-  arg2 = (char *)jarg2; 
-  (arg1)->PrintLog((char const *)arg2);
+  arg2 = (RakNet::FT_ConnectProcessResultHandler *)jarg2; 
+  (arg1)->SetResultHandler(arg2);
 }
 
 

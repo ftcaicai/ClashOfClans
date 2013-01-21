@@ -69,8 +69,8 @@ public class FT_Node_Plugin : PluginInterface2 {
     return ret;
   }
 
-  public virtual void PrintLog(string msg) {
-    RakNetPINVOKE.FT_Node_Plugin_PrintLog(swigCPtr, msg);
+  public void SetResultHandler(FT_ConnectProcessResultHandler rh) {
+    RakNetPINVOKE.FT_Node_Plugin_SetResultHandler(swigCPtr, FT_ConnectProcessResultHandler.getCPtr(rh));
   }
 
 }

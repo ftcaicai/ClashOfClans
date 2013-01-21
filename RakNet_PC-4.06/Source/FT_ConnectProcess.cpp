@@ -42,10 +42,7 @@ PluginReceiveResult FT_ConnectProcess::OnReceive(Packet *packet){
 		}
 		resultHandler->DebugReceive(packet->data[0]);
 	}
-
-	resultHandler->ReceiveLog();
-
-	return resultHandler->OnReceive(packet) ;
+	return RR_CONTINUE_PROCESSING;
 }
 
 void FT_ConnectProcess::OnRakPeerShutdown() {
@@ -65,31 +62,44 @@ void FT_Node_Process::SetRakPeerInterface( RakPeerInterface *ptr ){
 }
 
 FT_Node_Plugin::FT_Node_Plugin (){
-
+	resultHandler = 0;
 }
 
 FT_Node_Plugin::~FT_Node_Plugin() {
-	std::vector<FT_Node_Process*>::iterator it;
-	for (it = _Handler.begin(); it != _Handler.end(); it++)
-	{
-		FT_Node_Process::DestroyInstance( *it );
-	}
-	
+
 }
 
 PluginReceiveResult FT_Node_Plugin::OnReceive(Packet *packet){
-	PrintLog("xx");
+
+	if (resultHandler){
+		RakString strLog;
+		strLog.Set ( "FT_Node_Plugin::OnReceive :%d",  packet->data[0]);
+		resultHandler->ReceiveLog(strLog);
+	}
+
 	if (packet->data[0] == ID_SERVER_LOGIN) {
 		FT_MessageTypesNode  typeNode = (FT_MessageTypesNode)packet->data[1];
-		
-		std::vector<FT_Node_Process*>::iterator it;
-		for (it = _Handler.begin(); it != _Handler.end(); it++)
+
+		if (resultHandler){
+			RakString str;
+			str.Set("FT_Node_Plugin::OnReceive data[0]: %d, data[1]: %d, typeNode: %d",packet->data[0],packet->data[1], typeNode );
+			resultHandler->ReceiveLog(str);
+		}
+
+		UINT i = 0;
+		for (; i < _Handlers.Size(); i++)
 		{
-			if((*it)->GetNodeType() == typeNode){
+			FT_Node_Process* handler = _Handlers[i];
+			if (resultHandler){
+				RakString str;
+				str.Set("FT_Node_Plugin::OnReceive _Handler[%d].NodeType = %d", i, handler->GetNodeType() );
+				resultHandler->ReceiveLog(str);
+			}
+			if (handler && handler->GetNodeType() == typeNode){
 				BitStream bsIn(packet->data, packet->length, false);
 				bsIn.IgnoreBits(sizeof(RakNet::MessageID));
 				bsIn.IgnoreBits(sizeof(RakNet::FT_MessageTypesNode));
-				(*it)->OnProcess(&bsIn);
+				handler->OnProcess(&bsIn, packet->systemAddress);
 				return RR_STOP_PROCESSING;
 			}
 		}
@@ -98,14 +108,30 @@ PluginReceiveResult FT_Node_Plugin::OnReceive(Packet *packet){
 	return RR_CONTINUE_PROCESSING;
 }
 
-bool find_node (std::vector<FT_Node_Process*>::value_type va, FT_MessageTypesNode nodetype ){
-	return va->GetNodeType() == nodetype;
+void FT_Node_Plugin::SetResultHandler(FT_ConnectProcessResultHandler *rh) {
+	resultHandler = rh;
 }
 
 void FT_Node_Plugin::RegisterProcess(FT_Node_Process* handler){
 	
 	handler->SetRakPeerInterface(rakPeerInterface);
-	_Handler.push_back(handler);	
+	_Handlers.Insert(handler, _FILE_AND_LINE_);
+}
+
+void FT_Node_Plugin::RegisterProcess(FT_MessageTypesNode type) {
+	int removeIdenx = -1;
+	int i = 0;
+	for (; i < _Handlers.Size(); i++)
+	{
+		FT_Node_Process* handler = _Handlers[i];
+		if (handler->GetNodeType() == type){
+			removeIdenx = i;
+			break;
+		}
+	}
+	if (removeIdenx != -1){
+		_Handlers.RemoveAtIndexFast(removeIdenx);
+	}
 }
 
 uint32_t FT_Node_Plugin::Send(FT_DataBase* data, const AddressOrGUID systemIdentifier){

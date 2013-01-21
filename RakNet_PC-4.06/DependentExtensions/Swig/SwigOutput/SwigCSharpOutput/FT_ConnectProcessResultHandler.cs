@@ -66,11 +66,11 @@ public class FT_ConnectProcessResultHandler : IDisposable {
   }
 
   public virtual void ReceiveLog() {
-    RakNetPINVOKE.FT_ConnectProcessResultHandler_ReceiveLog(swigCPtr);
+    RakNetPINVOKE.FT_ConnectProcessResultHandler_ReceiveLog__SWIG_0(swigCPtr);
   }
 
-  public virtual void ReceiveLog2() {
-    RakNetPINVOKE.FT_ConnectProcessResultHandler_ReceiveLog2(swigCPtr);
+  public virtual void ReceiveLog(string str) {
+    RakNetPINVOKE.FT_ConnectProcessResultHandler_ReceiveLog__SWIG_1(swigCPtr, str);
   }
 
   public virtual PluginReceiveResult OnRead(BitStream bsIn) {
@@ -90,9 +90,9 @@ public class FT_ConnectProcessResultHandler : IDisposable {
     if (SwigDerivedClassHasMethod("DebugReceive", swigMethodTypes4))
       swigDelegate4 = new SwigDelegateFT_ConnectProcessResultHandler_4(SwigDirectorDebugReceive);
     if (SwigDerivedClassHasMethod("ReceiveLog", swigMethodTypes5))
-      swigDelegate5 = new SwigDelegateFT_ConnectProcessResultHandler_5(SwigDirectorReceiveLog);
-    if (SwigDerivedClassHasMethod("ReceiveLog2", swigMethodTypes6))
-      swigDelegate6 = new SwigDelegateFT_ConnectProcessResultHandler_6(SwigDirectorReceiveLog2);
+      swigDelegate5 = new SwigDelegateFT_ConnectProcessResultHandler_5(SwigDirectorReceiveLog__SWIG_0);
+    if (SwigDerivedClassHasMethod("ReceiveLog", swigMethodTypes6))
+      swigDelegate6 = new SwigDelegateFT_ConnectProcessResultHandler_6(SwigDirectorReceiveLog__SWIG_1);
     if (SwigDerivedClassHasMethod("OnRead", swigMethodTypes7))
       swigDelegate7 = new SwigDelegateFT_ConnectProcessResultHandler_7(SwigDirectorOnRead);
     RakNetPINVOKE.FT_ConnectProcessResultHandler_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7);
@@ -124,12 +124,12 @@ public class FT_ConnectProcessResultHandler : IDisposable {
     DebugReceive(flag);
   }
 
-  private void SwigDirectorReceiveLog() {
+  private void SwigDirectorReceiveLog__SWIG_0() {
     ReceiveLog();
   }
 
-  private void SwigDirectorReceiveLog2() {
-    ReceiveLog2();
+  private void SwigDirectorReceiveLog__SWIG_1(string str) {
+    ReceiveLog(str);
   }
 
   private int SwigDirectorOnRead(IntPtr bsIn) {
@@ -142,7 +142,7 @@ public class FT_ConnectProcessResultHandler : IDisposable {
   public delegate void SwigDelegateFT_ConnectProcessResultHandler_3();
   public delegate void SwigDelegateFT_ConnectProcessResultHandler_4(int flag);
   public delegate void SwigDelegateFT_ConnectProcessResultHandler_5();
-  public delegate void SwigDelegateFT_ConnectProcessResultHandler_6();
+  public delegate void SwigDelegateFT_ConnectProcessResultHandler_6(string str);
   public delegate int SwigDelegateFT_ConnectProcessResultHandler_7(IntPtr bsIn);
 
   private SwigDelegateFT_ConnectProcessResultHandler_0 swigDelegate0;
@@ -160,7 +160,7 @@ public class FT_ConnectProcessResultHandler : IDisposable {
   private static Type[] swigMethodTypes3 = new Type[] {  };
   private static Type[] swigMethodTypes4 = new Type[] { typeof(int) };
   private static Type[] swigMethodTypes5 = new Type[] {  };
-  private static Type[] swigMethodTypes6 = new Type[] {  };
+  private static Type[] swigMethodTypes6 = new Type[] { typeof(string) };
   private static Type[] swigMethodTypes7 = new Type[] { typeof(BitStream) };
 }
 

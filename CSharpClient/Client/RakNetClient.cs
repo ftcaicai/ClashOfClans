@@ -86,6 +86,7 @@ namespace Client
         private bool _bConnectSuccess;
         private System.Action<RakPeerInterface,Packet> processMessageHandler;
 
+
         public RakNetClientState ClientState
         {
             get
@@ -96,6 +97,11 @@ namespace Client
             {
                 _State = value;
             }
+        }
+
+        public RakNetClient(string ip, ushort port)
+            : this(ip, port, null)
+        {
         }
 
         public RakNetClient(string ip, ushort port, System.Action<RakPeerInterface,Packet> msgHandler)
@@ -143,7 +149,7 @@ namespace Client
 
                     RakNet.FT_ConnectProcess process = new RakNet.FT_ConnectProcess();
                     process.SetResultHandler(new RakNetClientResultHandler(this));
-                    // AttachInterface2(process);
+                    AttachInterface2(process);
 
                     ConnectionAttemptResult connectResult = _peer.Connect(_sServerIP, _nServerPort, "", 0);
                     Log.Debug("Connect Result: " + connectResult);

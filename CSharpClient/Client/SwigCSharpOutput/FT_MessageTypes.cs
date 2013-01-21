@@ -9,7 +9,7 @@
 namespace RakNet {
 
 public enum FT_MessageTypes {
-  ID_FT_TEST1 = DefaultMessageIDTypes.ID_USER_PACKET_ENUM+1,
+  ID_FT_TEST1 = DefaultMessageIDTypes. ID_USER_PACKET_ENUM+1,
   ID_SERVER_LOGIN
 }
 
