@@ -80,22 +80,22 @@ public class FT_UnitData : FT_DataBase {
     } 
   }
 
-  public byte nGrid_x {
+  public sbyte nGrid_x {
     set {
       RakNetPINVOKE.FT_UnitData_nGrid_x_set(swigCPtr, value);
     } 
     get {
-      byte ret = RakNetPINVOKE.FT_UnitData_nGrid_x_get(swigCPtr);
+      sbyte ret = RakNetPINVOKE.FT_UnitData_nGrid_x_get(swigCPtr);
       return ret;
     } 
   }
 
-  public byte nGrid_y {
+  public sbyte nGrid_y {
     set {
       RakNetPINVOKE.FT_UnitData_nGrid_y_set(swigCPtr, value);
     } 
     get {
-      byte ret = RakNetPINVOKE.FT_UnitData_nGrid_y_get(swigCPtr);
+      sbyte ret = RakNetPINVOKE.FT_UnitData_nGrid_y_get(swigCPtr);
       return ret;
     } 
   }

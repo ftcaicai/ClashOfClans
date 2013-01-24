@@ -22444,12 +22444,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_FT_Node_Plugin(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_FT_Node_Plugin_RegisterProcess(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_Node_Plugin_RegisterProcess__SWIG_0(void * jarg1, void * jarg2) {
   RakNet::FT_Node_Plugin *arg1 = (RakNet::FT_Node_Plugin *) 0 ;
   RakNet::FT_Node_Process *arg2 = (RakNet::FT_Node_Process *) 0 ;
   
   arg1 = (RakNet::FT_Node_Plugin *)jarg1; 
   arg2 = (RakNet::FT_Node_Process *)jarg2; 
+  (arg1)->RegisterProcess(arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_Node_Plugin_RegisterProcess__SWIG_1(void * jarg1, int jarg2) {
+  RakNet::FT_Node_Plugin *arg1 = (RakNet::FT_Node_Plugin *) 0 ;
+  FT_MessageTypesNode arg2 ;
+  
+  arg1 = (RakNet::FT_Node_Plugin *)jarg1; 
+  arg2 = (FT_MessageTypesNode)jarg2; 
   (arg1)->RegisterProcess(arg2);
 }
 
@@ -22634,45 +22644,45 @@ SWIGEXPORT unsigned char SWIGSTDCALL CSharp_FT_UnitData_nGridSize_get(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_FT_UnitData_nGrid_x_set(void * jarg1, unsigned char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_UnitData_nGrid_x_set(void * jarg1, signed char jarg2) {
   RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
-  unsigned char arg2 ;
+  signed char arg2 ;
   
   arg1 = (RakNet::FT_UnitData *)jarg1; 
-  arg2 = (unsigned char)jarg2; 
+  arg2 = (signed char)jarg2; 
   if (arg1) (arg1)->nGrid_x = arg2;
 }
 
 
-SWIGEXPORT unsigned char SWIGSTDCALL CSharp_FT_UnitData_nGrid_x_get(void * jarg1) {
-  unsigned char jresult ;
+SWIGEXPORT signed char SWIGSTDCALL CSharp_FT_UnitData_nGrid_x_get(void * jarg1) {
+  signed char jresult ;
   RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
-  unsigned char result;
+  signed char result;
   
   arg1 = (RakNet::FT_UnitData *)jarg1; 
-  result = (unsigned char) ((arg1)->nGrid_x);
+  result = (signed char) ((arg1)->nGrid_x);
   jresult = result; 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_FT_UnitData_nGrid_y_set(void * jarg1, unsigned char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_UnitData_nGrid_y_set(void * jarg1, signed char jarg2) {
   RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
-  unsigned char arg2 ;
+  signed char arg2 ;
   
   arg1 = (RakNet::FT_UnitData *)jarg1; 
-  arg2 = (unsigned char)jarg2; 
+  arg2 = (signed char)jarg2; 
   if (arg1) (arg1)->nGrid_y = arg2;
 }
 
 
-SWIGEXPORT unsigned char SWIGSTDCALL CSharp_FT_UnitData_nGrid_y_get(void * jarg1) {
-  unsigned char jresult ;
+SWIGEXPORT signed char SWIGSTDCALL CSharp_FT_UnitData_nGrid_y_get(void * jarg1) {
+  signed char jresult ;
   RakNet::FT_UnitData *arg1 = (RakNet::FT_UnitData *) 0 ;
-  unsigned char result;
+  signed char result;
   
   arg1 = (RakNet::FT_UnitData *)jarg1; 
-  result = (unsigned char) ((arg1)->nGrid_y);
+  result = (signed char) ((arg1)->nGrid_y);
   jresult = result; 
   return jresult;
 }

@@ -4824,8 +4824,11 @@ class RakNetPINVOKE {
   [DllImport("RakNet", EntryPoint="CSharp_delete_FT_Node_Plugin")]
   public static extern void delete_FT_Node_Plugin(HandleRef jarg1);
 
-  [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Plugin_RegisterProcess")]
-  public static extern void FT_Node_Plugin_RegisterProcess(HandleRef jarg1, HandleRef jarg2);
+  [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Plugin_RegisterProcess__SWIG_0")]
+  public static extern void FT_Node_Plugin_RegisterProcess__SWIG_0(HandleRef jarg1, HandleRef jarg2);
+
+  [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Plugin_RegisterProcess__SWIG_1")]
+  public static extern void FT_Node_Plugin_RegisterProcess__SWIG_1(HandleRef jarg1, int jarg2);
 
   [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Plugin_Send__SWIG_0")]
   public static extern uint FT_Node_Plugin_Send__SWIG_0(HandleRef jarg1, HandleRef jarg2, HandleRef jarg3);
@@ -4870,16 +4873,16 @@ class RakNetPINVOKE {
   public static extern byte FT_UnitData_nGridSize_get(HandleRef jarg1);
 
   [DllImport("RakNet", EntryPoint="CSharp_FT_UnitData_nGrid_x_set")]
-  public static extern void FT_UnitData_nGrid_x_set(HandleRef jarg1, byte jarg2);
+  public static extern void FT_UnitData_nGrid_x_set(HandleRef jarg1, sbyte jarg2);
 
   [DllImport("RakNet", EntryPoint="CSharp_FT_UnitData_nGrid_x_get")]
-  public static extern byte FT_UnitData_nGrid_x_get(HandleRef jarg1);
+  public static extern sbyte FT_UnitData_nGrid_x_get(HandleRef jarg1);
 
   [DllImport("RakNet", EntryPoint="CSharp_FT_UnitData_nGrid_y_set")]
-  public static extern void FT_UnitData_nGrid_y_set(HandleRef jarg1, byte jarg2);
+  public static extern void FT_UnitData_nGrid_y_set(HandleRef jarg1, sbyte jarg2);
 
   [DllImport("RakNet", EntryPoint="CSharp_FT_UnitData_nGrid_y_get")]
-  public static extern byte FT_UnitData_nGrid_y_get(HandleRef jarg1);
+  public static extern sbyte FT_UnitData_nGrid_y_get(HandleRef jarg1);
 
   [DllImport("RakNet", EntryPoint="CSharp_FT_UnitData_sName_set")]
   public static extern void FT_UnitData_sName_set(HandleRef jarg1, HandleRef jarg2);

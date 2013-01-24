@@ -54,7 +54,11 @@ public class FT_Node_Plugin : PluginInterface2 {
   }
 
   public void RegisterProcess(FT_Node_Process handler) {
-    RakNetPINVOKE.FT_Node_Plugin_RegisterProcess(swigCPtr, FT_Node_Process.getCPtr(handler));
+    RakNetPINVOKE.FT_Node_Plugin_RegisterProcess__SWIG_0(swigCPtr, FT_Node_Process.getCPtr(handler));
+  }
+
+  public void RegisterProcess(FT_MessageTypesNode type) {
+    RakNetPINVOKE.FT_Node_Plugin_RegisterProcess__SWIG_1(swigCPtr, (int)type);
   }
 
   public uint Send(FT_DataBase data, AddressOrGUID systemIdentifier) {

@@ -21,6 +21,7 @@ namespace RakNet{
 	enum FT_MessageTypesNode {
 		NODE_FT_None = 0,
 		NODE_FT_TEST1,
+		NODE_FT_UNITDATA,
 	};
 
 	struct FT_DataBase {
@@ -39,8 +40,8 @@ namespace RakNet{
 		unsigned char	iLevel;
 		FT_EUnit		eUnit;
 		unsigned char	nGridSize;
-		unsigned char	nGrid_x;
-		unsigned char	nGrid_y;
+		signed char		nGrid_x;
+		signed char		nGrid_y;
 		RakString		sName;
 		RakString		sInfo;
 
