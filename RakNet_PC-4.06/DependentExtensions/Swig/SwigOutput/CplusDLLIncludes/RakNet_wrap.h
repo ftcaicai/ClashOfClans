@@ -176,15 +176,18 @@ public:
     SwigDirector_FT_Node_Process();
     virtual ~SwigDirector_FT_Node_Process();
     virtual FT_MessageTypesNode GetNodeType();
-    virtual void OnProcess(RakNet::BitStream *bsIn, RakNet::AddressOrGUID const systemIdentifier);
+    virtual void OnProcess(FT_Session const session, RakNet::BitStream *bsIn, RakNet::AddressOrGUID const systemIdentifier);
+    virtual void OnOutTime(FT_Session const session);
 
     typedef int (SWIGSTDCALL* SWIG_Callback0_t)();
-    typedef void (SWIGSTDCALL* SWIG_Callback1_t)(void *, void *);
-    void swig_connect_director(SWIG_Callback0_t callbackGetNodeType, SWIG_Callback1_t callbackOnProcess);
+    typedef void (SWIGSTDCALL* SWIG_Callback1_t)(void *, void *, void *);
+    typedef void (SWIGSTDCALL* SWIG_Callback2_t)(void *);
+    void swig_connect_director(SWIG_Callback0_t callbackGetNodeType, SWIG_Callback1_t callbackOnProcess, SWIG_Callback2_t callbackOnOutTime);
 
 private:
     SWIG_Callback0_t swig_callbackGetNodeType;
     SWIG_Callback1_t swig_callbackOnProcess;
+    SWIG_Callback2_t swig_callbackOnOutTime;
     void swig_init_callbacks();
 };
 

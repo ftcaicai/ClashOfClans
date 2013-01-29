@@ -20,9 +20,6 @@ void ProcessRakNetMessage (RakPeerInterface *peer){
 	while (!_bQuit)
 	{
 		for( packet = peer->Receive(); packet; peer->DeallocatePacket(packet), packet = peer->Receive()){
-
-			
-
 			switch (packet->data[0])
 			{
 			case ID_CONNECTION_REQUEST_ACCEPTED:

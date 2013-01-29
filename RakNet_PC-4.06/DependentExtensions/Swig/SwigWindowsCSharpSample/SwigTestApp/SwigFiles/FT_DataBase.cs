@@ -41,6 +41,9 @@ public class FT_DataBase : IDisposable {
     }
   }
 
+  public FT_DataBase() : this(RakNetPINVOKE.new_FT_DataBase(), true) {
+  }
+
   public virtual FT_MessageTypesNode NodeType() {
     FT_MessageTypesNode ret = (FT_MessageTypesNode)RakNetPINVOKE.FT_DataBase_NodeType(swigCPtr);
     return ret;
@@ -48,6 +51,17 @@ public class FT_DataBase : IDisposable {
 
   public virtual void Serialize(bool writeToBitstream, BitStream bs) {
     RakNetPINVOKE.FT_DataBase_Serialize(swigCPtr, writeToBitstream, BitStream.getCPtr(bs));
+  }
+
+  public FT_Session session {
+    set {
+      RakNetPINVOKE.FT_DataBase_session_set(swigCPtr, FT_Session.getCPtr(value));
+    } 
+    get {
+      IntPtr cPtr = RakNetPINVOKE.FT_DataBase_session_get(swigCPtr);
+      FT_Session ret = (cPtr == IntPtr.Zero) ? null : new FT_Session(cPtr, false);
+      return ret;
+    } 
   }
 
 }

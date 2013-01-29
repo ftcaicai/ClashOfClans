@@ -99,7 +99,14 @@ PluginReceiveResult FT_Node_Plugin::OnReceive(Packet *packet){
 				BitStream bsIn(packet->data, packet->length, false);
 				bsIn.IgnoreBits(sizeof(RakNet::MessageID));
 				bsIn.IgnoreBits(sizeof(RakNet::FT_MessageTypesNode));
-				handler->OnProcess(&bsIn, packet->systemAddress);
+				FT_DataBase dataBase;
+				dataBase.Serialize(false, &bsIn);
+				if (!dataBase.session.IsOutTime()){
+					handler->OnProcess(dataBase.session, &bsIn, packet->systemAddress);
+				}
+				else{
+					handler->OnOutTime(dataBase.session);
+				}
 				return RR_STOP_PROCESSING;
 			}
 		}
@@ -134,16 +141,17 @@ void FT_Node_Plugin::RegisterProcess(FT_MessageTypesNode type) {
 	}
 }
 
-uint32_t FT_Node_Plugin::Send(FT_DataBase* data, const AddressOrGUID systemIdentifier){
-	return Send(data, MEDIUM_PRIORITY,RELIABLE_ORDERED, 0, systemIdentifier ); 
+uint32_t FT_Node_Plugin::Send(const FT_Session session,FT_DataBase* data, const AddressOrGUID systemIdentifier){
+	return Send(session, data, MEDIUM_PRIORITY,RELIABLE_ORDERED, 0, systemIdentifier ); 
 }
 
-uint32_t FT_Node_Plugin::Send(FT_DataBase* data, PacketPriority priority, PacketReliability reliability, char orderingChannel, const AddressOrGUID systemIdentifier){
+uint32_t FT_Node_Plugin::Send(const FT_Session session,FT_DataBase* data, PacketPriority priority, PacketReliability reliability, char orderingChannel, const AddressOrGUID systemIdentifier){
 	RakNet::MessageID messageID = ID_SERVER_LOGIN;
 	RakNet::FT_MessageTypesNode nodeID = data->NodeType();
 	BitStream bsOut;
 	bsOut.Serialize(true, messageID);
 	bsOut.Serialize(true, nodeID);
+	bsOut.Serialize(true, session);
 	data->Serialize(true, &bsOut);
 	if (rakPeerInterface) {
 		return rakPeerInterface->Send(&bsOut, priority, reliability, orderingChannel, systemIdentifier, false);

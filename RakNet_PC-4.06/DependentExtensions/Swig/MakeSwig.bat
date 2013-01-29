@@ -9,13 +9,13 @@ SET swigPath=%swigPath%\
 del /F /Q SwigOutput\SwigCSharpOutput\*
 if "%3"=="" goto :NOSQL
 %swigPath%swig -c++ -csharp -namespace RakNet -I"%1" -I"SwigInterfaceFiles" -I"%3" -DSWIG_ADDITIONAL_SQL_LITE -outdir SwigOutput\SwigCSharpOutput -o SwigOutput\CplusDLLIncludes\RakNet_wrap.cxx SwigInterfaceFiles\RakNet.i
-copy /Y SwigOutput\SwigCSharpOutput\* SwigWindowsCSharpSample\SwigTestApp\SwigFiles\*
+copy /Y "SwigOutput\SwigCSharpOutput\*" "SwigWindowsCSharpSample\SwigTestApp\SwigFiles\*"
 GOTO ENDSWIG
 :NOSQL
 %swigPath%swig -c++ -csharp -namespace RakNet -I"%1" -I"SwigInterfaceFiles" -outdir SwigOutput\SwigCSharpOutput -o SwigOutput\CplusDLLIncludes\RakNet_wrap.cxx SwigInterfaceFiles\RakNet.i
-copy /Y SwigOutput\SwigCSharpOutput\* SwigWindowsCSharpSample\SwigTestApp\SwigFiles\*
-del /F /Q ..\..\..\Unity3dClient\Assets\Scrpits\RakNetSource\*
-copy /Y SwigOutput\SwigCSharpOutput\* ..\..\..\Unity3dClient\Assets\Scrpits\RakNetSource\*
+copy /Y "SwigOutput\SwigCSharpOutput\*" "SwigWindowsCSharpSample\SwigTestApp\SwigFiles\*"
+del /F /Q "..\..\..\Unity3dClient\Assets\Scrpits\RakNetSource\*"
+copy /Y "SwigOutput\SwigCSharpOutput\*" "..\..\..\Unity3dClient\Assets\Scrpits\RakNetSource\*"
 del /F /Q ..\..\..\Unity3dClient\Assets\Plugins\RakNet.dll
 :ENDSWIG
 if errorlevel 1 GOTO :SWIGERROR

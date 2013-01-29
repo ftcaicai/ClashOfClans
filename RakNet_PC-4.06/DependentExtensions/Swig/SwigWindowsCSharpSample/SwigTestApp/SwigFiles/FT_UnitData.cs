@@ -122,6 +122,13 @@ public class FT_UnitData : FT_DataBase {
     } 
   }
 
+  public FT_UnitData() : this(RakNetPINVOKE.new_FT_UnitData__SWIG_0(), true) {
+  }
+
+  public FT_UnitData(FT_Session session) : this(RakNetPINVOKE.new_FT_UnitData__SWIG_1(FT_Session.getCPtr(session)), true) {
+    if (RakNetPINVOKE.SWIGPendingException.Pending) throw RakNetPINVOKE.SWIGPendingException.Retrieve();
+  }
+
   public override FT_MessageTypesNode NodeType() {
     FT_MessageTypesNode ret = (FT_MessageTypesNode)RakNetPINVOKE.FT_UnitData_NodeType(swigCPtr);
     return ret;
@@ -129,9 +136,6 @@ public class FT_UnitData : FT_DataBase {
 
   public override void Serialize(bool writeToBitstream, BitStream bs) {
     RakNetPINVOKE.FT_UnitData_Serialize(swigCPtr, writeToBitstream, BitStream.getCPtr(bs));
-  }
-
-  public FT_UnitData() : this(RakNetPINVOKE.new_FT_UnitData(), true) {
   }
 
 }

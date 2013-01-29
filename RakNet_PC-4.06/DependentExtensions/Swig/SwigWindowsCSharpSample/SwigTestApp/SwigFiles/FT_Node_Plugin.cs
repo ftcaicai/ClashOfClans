@@ -61,14 +61,14 @@ public class FT_Node_Plugin : PluginInterface2 {
     RakNetPINVOKE.FT_Node_Plugin_RegisterProcess__SWIG_1(swigCPtr, (int)type);
   }
 
-  public uint Send(FT_DataBase data, AddressOrGUID systemIdentifier) {
-    uint ret = RakNetPINVOKE.FT_Node_Plugin_Send__SWIG_0(swigCPtr, FT_DataBase.getCPtr(data), AddressOrGUID.getCPtr(systemIdentifier));
+  public uint Send(FT_Session session, FT_DataBase data, AddressOrGUID systemIdentifier) {
+    uint ret = RakNetPINVOKE.FT_Node_Plugin_Send__SWIG_0(swigCPtr, FT_Session.getCPtr(session), FT_DataBase.getCPtr(data), AddressOrGUID.getCPtr(systemIdentifier));
     if (RakNetPINVOKE.SWIGPendingException.Pending) throw RakNetPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
-  public uint Send(FT_DataBase data, PacketPriority priority, PacketReliability reliability, char orderingChannel, AddressOrGUID systemIdentifier) {
-    uint ret = RakNetPINVOKE.FT_Node_Plugin_Send__SWIG_1(swigCPtr, FT_DataBase.getCPtr(data), (int)priority, (int)reliability, orderingChannel, AddressOrGUID.getCPtr(systemIdentifier));
+  public uint Send(FT_Session session, FT_DataBase data, PacketPriority priority, PacketReliability reliability, char orderingChannel, AddressOrGUID systemIdentifier) {
+    uint ret = RakNetPINVOKE.FT_Node_Plugin_Send__SWIG_1(swigCPtr, FT_Session.getCPtr(session), FT_DataBase.getCPtr(data), (int)priority, (int)reliability, orderingChannel, AddressOrGUID.getCPtr(systemIdentifier));
     if (RakNetPINVOKE.SWIGPendingException.Pending) throw RakNetPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }

@@ -10,7 +10,9 @@ namespace RakNet {
 
 public enum FT_MessageTypesNode {
   NODE_FT_None = 0,
-  NODE_FT_TEST1
+  NODE_FT_TEST1,
+  NODE_FT_UNITDATA,
+  NODE_FT_UNITDATA_LIST
 }
 
 }

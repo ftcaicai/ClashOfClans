@@ -21,9 +21,9 @@ public:
 	Test_ProcessA ();
 	virtual ~Test_ProcessA();
 
-	virtual FT_MessageTypesNode GetNodeType() { return NODE_FT_TEST1; }
+	virtual FT_MessageTypesNode GetNodeType() { return NODE_FT_UNITDATA_LIST; }
 
-	virtual void OnProcess (BitStream* bsIn, const AddressOrGUID systemIdentifier);
+	virtual void OnProcess (const FT_Session session, BitStream* bsIn, const AddressOrGUID systemIdentifier);
 
 };
 

@@ -66,7 +66,9 @@ public:
 
 	virtual FT_MessageTypesNode GetNodeType() { return NODE_FT_None; }
 
-	virtual void OnProcess (BitStream* bsIn, const AddressOrGUID systemIdentifier) {}
+	virtual void OnProcess (const FT_Session session, BitStream* bsIn, const AddressOrGUID systemIdentifier) {}
+
+	virtual void OnOutTime (const FT_Session session){}
 
 	void SetRakPeerInterface( RakPeerInterface *ptr );
 
@@ -89,9 +91,9 @@ public:
 
 	void RegisterProcess(FT_MessageTypesNode type);
 	
-	uint32_t Send(FT_DataBase* data, const AddressOrGUID systemIdentifier);
+	uint32_t Send(const FT_Session session,FT_DataBase* data, const AddressOrGUID systemIdentifier);
 
-	uint32_t Send(FT_DataBase* data, PacketPriority priority, PacketReliability reliability, char orderingChannel, const AddressOrGUID systemIdentifier);
+	uint32_t Send(const FT_Session session,FT_DataBase* data, PacketPriority priority, PacketReliability reliability, char orderingChannel, const AddressOrGUID systemIdentifier);
 
 	void SetResultHandler(FT_ConnectProcessResultHandler *rh);
 
