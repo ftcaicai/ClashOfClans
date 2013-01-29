@@ -90,6 +90,8 @@ public:
 	void RegisterProcess(FT_Node_Process* handler);
 
 	void RegisterProcess(FT_MessageTypesNode type);
+
+	void SetRakPeer( RakPeerInterface *ptr );
 	
 	uint32_t Send(const FT_Session session,FT_DataBase* data, const AddressOrGUID systemIdentifier);
 
@@ -100,6 +102,8 @@ public:
 private:
 	DataStructures::List<FT_Node_Process*> _Handlers;
 	FT_ConnectProcessResultHandler *resultHandler;
+
+	RakPeerInterface* _rakPeerInterface;
 };
 
 }

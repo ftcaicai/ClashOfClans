@@ -4836,6 +4836,9 @@ class RakNetPINVOKE {
   [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Plugin_RegisterProcess__SWIG_1")]
   public static extern void FT_Node_Plugin_RegisterProcess__SWIG_1(HandleRef jarg1, int jarg2);
 
+  [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Plugin_SetRakPeer")]
+  public static extern void FT_Node_Plugin_SetRakPeer(HandleRef jarg1, HandleRef jarg2);
+
   [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Plugin_Send__SWIG_0")]
   public static extern uint FT_Node_Plugin_Send__SWIG_0(HandleRef jarg1, HandleRef jarg2, HandleRef jarg3, HandleRef jarg4);
 

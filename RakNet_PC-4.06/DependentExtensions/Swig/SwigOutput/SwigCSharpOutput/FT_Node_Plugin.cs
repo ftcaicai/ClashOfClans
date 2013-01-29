@@ -61,6 +61,10 @@ public class FT_Node_Plugin : PluginInterface2 {
     RakNetPINVOKE.FT_Node_Plugin_RegisterProcess__SWIG_1(swigCPtr, (int)type);
   }
 
+  public void SetRakPeer(RakPeerInterface ptr) {
+    RakNetPINVOKE.FT_Node_Plugin_SetRakPeer(swigCPtr, RakPeerInterface.getCPtr(ptr));
+  }
+
   public uint Send(FT_Session session, FT_DataBase data, AddressOrGUID systemIdentifier) {
     uint ret = RakNetPINVOKE.FT_Node_Plugin_Send__SWIG_0(swigCPtr, FT_Session.getCPtr(session), FT_DataBase.getCPtr(data), AddressOrGUID.getCPtr(systemIdentifier));
     if (RakNetPINVOKE.SWIGPendingException.Pending) throw RakNetPINVOKE.SWIGPendingException.Retrieve();

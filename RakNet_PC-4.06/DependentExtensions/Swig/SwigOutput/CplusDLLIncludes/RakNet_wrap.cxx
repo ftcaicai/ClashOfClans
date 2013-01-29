@@ -22528,6 +22528,16 @@ SWIGEXPORT void SWIGSTDCALL CSharp_FT_Node_Plugin_RegisterProcess__SWIG_1(void *
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_FT_Node_Plugin_SetRakPeer(void * jarg1, void * jarg2) {
+  RakNet::FT_Node_Plugin *arg1 = (RakNet::FT_Node_Plugin *) 0 ;
+  RakNet::RakPeerInterface *arg2 = (RakNet::RakPeerInterface *) 0 ;
+  
+  arg1 = (RakNet::FT_Node_Plugin *)jarg1; 
+  arg2 = (RakNet::RakPeerInterface *)jarg2; 
+  (arg1)->SetRakPeer(arg2);
+}
+
+
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_FT_Node_Plugin_Send__SWIG_0(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
   unsigned int jresult ;
   RakNet::FT_Node_Plugin *arg1 = (RakNet::FT_Node_Plugin *) 0 ;

@@ -69,6 +69,10 @@ FT_Node_Plugin::~FT_Node_Plugin() {
 
 }
 
+void FT_Node_Plugin::SetRakPeer( RakPeerInterface *ptr ){
+	_rakPeerInterface = ptr;
+}
+
 PluginReceiveResult FT_Node_Plugin::OnReceive(Packet *packet){
 
 	if (resultHandler){
@@ -153,8 +157,8 @@ uint32_t FT_Node_Plugin::Send(const FT_Session session,FT_DataBase* data, Packet
 	bsOut.Serialize(true, nodeID);
 	bsOut.Serialize(true, session);
 	data->Serialize(true, &bsOut);
-	if (rakPeerInterface) {
-		return rakPeerInterface->Send(&bsOut, priority, reliability, orderingChannel, systemIdentifier, false);
+	if (_rakPeerInterface) {
+		return _rakPeerInterface->Send(&bsOut, priority, reliability, orderingChannel, systemIdentifier, false);
 	}
 	return 0;
 }
