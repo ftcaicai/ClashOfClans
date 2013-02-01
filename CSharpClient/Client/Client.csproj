@@ -77,7 +77,9 @@
     <Compile Include="SwigCSharpOutput\FT_MessageTypesNode.cs" />
     <Compile Include="SwigCSharpOutput\FT_Node_Plugin.cs" />
     <Compile Include="SwigCSharpOutput\FT_Node_Process.cs" />
+    <Compile Include="SwigCSharpOutput\FT_Session.cs" />
     <Compile Include="SwigCSharpOutput\FT_UnitData.cs" />
+    <Compile Include="SwigCSharpOutput\FT_UnitDataList.cs" />
     <Compile Include="SwigCSharpOutput\FullyConnectedMesh2.cs" />
     <Compile Include="SwigCSharpOutput\IncrementalReadInterface.cs" />
     <Compile Include="SwigCSharpOutput\JoinTeamType.cs" />
@@ -143,6 +145,7 @@
     <Compile Include="SwigCSharpOutput\SortQuery.cs" />
     <Compile Include="SwigCSharpOutput\StartupResult.cs" />
     <Compile Include="SwigCSharpOutput\SWIGTYPE_p_bool.cs" />
+    <Compile Include="SwigCSharpOutput\SWIGTYPE_p_DataStructures__ListT_RakNet__FT_UnitData_t.cs" />
     <Compile Include="SwigCSharpOutput\SWIGTYPE_p_DataStructures__ListT_RakNet__TM_TeamMember_p_t.cs" />
     <Compile Include="SwigCSharpOutput\SWIGTYPE_p_DataStructures__ListT_RakNet__TM_Team_p_t.cs" />
     <Compile Include="SwigCSharpOutput\SWIGTYPE_p_double.cs" />

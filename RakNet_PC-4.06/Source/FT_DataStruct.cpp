@@ -16,6 +16,11 @@ FT_Session::~FT_Session(){
 
 }
 
+void FT_Session::Serialize(bool writeToBitstream, RakNet::BitStream* bs){
+	bs->Serialize(writeToBitstream, guid);
+	bs->Serialize(writeToBitstream, startTime);
+}
+
 bool FT_Session::IsOutTime(){
 	return (startTime + 6000) < RakNet::GetTimeMS();
 }

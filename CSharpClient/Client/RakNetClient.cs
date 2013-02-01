@@ -78,6 +78,7 @@ namespace Client
         private RakNet.RakPeerInterface _peer;
         private RakNet.SocketDescriptor _socketDesc;
         private RakNet.Packet _packet;
+        private RakNet.SystemAddress _systemAddress;
         private string _sServerIP;
         private ushort _nServerPort;
         private RakNetClientState _State;
@@ -157,6 +158,8 @@ namespace Client
                     {
                         _State = RakNetClientState.ConnectOK;
 
+                        _systemAddress = new SystemAddress(_sServerIP, _nServerPort);
+
                         _ReadThread.Start();
                     }
                     else
@@ -194,6 +197,12 @@ namespace Client
                 Thread.Sleep(10);
             }
             Log.Debug("Thread Stop!");
+
+            if (_peer != null && ClientState == RakNetClientState.ConnectOK)
+            {
+                _peer.Shutdown(300);
+            }
+
         }
 
         void ProcessMessage (Packet packet){
@@ -221,12 +230,17 @@ namespace Client
         public void Dispose()
         {
             StopThread();
-            if (_peer != null)
-            {
-                _peer.Shutdown(300);
-            }
         }
 
         #endregion
+
+        public void Send(RakNet.BitStream bsIn, char orderingChannel)
+        {
+            if (_peer != null)
+            {
+                uint sendLength = _peer.Send(bsIn, RakNet.PacketPriority.IMMEDIATE_PRIORITY, RakNet.PacketReliability.RELIABLE_ORDERED, orderingChannel, _systemAddress, false);
+                Log.Debug("sendLength:" + sendLength);
+            }
+        }
     }
 }

@@ -74,6 +74,15 @@ public class FT_Node_Process : IDisposable {
     RakNetPINVOKE.FT_Node_Process_SetRakPeerInterface(swigCPtr, RakPeerInterface.getCPtr(ptr));
   }
 
+  public void SetNodePlugin(FT_Node_Plugin ptr) {
+    RakNetPINVOKE.FT_Node_Process_SetNodePlugin(swigCPtr, FT_Node_Plugin.getCPtr(ptr));
+  }
+
+  public void Send(FT_Session session, FT_DataBase data, AddressOrGUID systemIdentifier) {
+    RakNetPINVOKE.FT_Node_Process_Send(swigCPtr, FT_Session.getCPtr(session), FT_DataBase.getCPtr(data), AddressOrGUID.getCPtr(systemIdentifier));
+    if (RakNetPINVOKE.SWIGPendingException.Pending) throw RakNetPINVOKE.SWIGPendingException.Retrieve();
+  }
+
   private void SwigDirectorConnect() {
     if (SwigDerivedClassHasMethod("GetNodeType", swigMethodTypes0))
       swigDelegate0 = new SwigDelegateFT_Node_Process_0(SwigDirectorGetNodeType);

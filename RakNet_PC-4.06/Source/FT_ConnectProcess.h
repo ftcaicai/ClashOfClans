@@ -11,6 +11,7 @@ namespace RakNet{
 
 class RakPeerInterface;
 class FT_ConnectProcess;
+class FT_Node_Plugin;
 
 class FT_ConnectProcessResultHandler {
 
@@ -66,14 +67,19 @@ public:
 
 	virtual FT_MessageTypesNode GetNodeType() { return NODE_FT_None; }
 
-	virtual void OnProcess (const FT_Session session, BitStream* bsIn, const AddressOrGUID systemIdentifier) {}
+	virtual void OnProcess (FT_Session session, BitStream* bsIn, const AddressOrGUID systemIdentifier) {}
 
-	virtual void OnOutTime (const FT_Session session){}
+	virtual void OnOutTime (FT_Session session){}
 
 	void SetRakPeerInterface( RakPeerInterface *ptr );
 
-private:
+	void SetNodePlugin( FT_Node_Plugin *ptr );
+
+	void Send(FT_Session session,FT_DataBase* data, const AddressOrGUID systemIdentifier);
+
+protected:
 	RakPeerInterface*	_peer;
+	FT_Node_Plugin*		_nodePlugin;
 };
 
 class RAK_DLL_EXPORT FT_Node_Plugin : public PluginInterface2

@@ -13,13 +13,17 @@ namespace Client
             return FT_MessageTypesNode.NODE_FT_TEST1;
         }
 
-        public override void OnProcess(BitStream bsIn)
+        public override void OnProcess(FT_Session session, BitStream bsIn, AddressOrGUID systemIdentifier)
         {
             Log.Debug("FT_Node_Process_Test1.OnProcess :");
             FT_UnitData unitData = new FT_UnitData();
             unitData.Serialize(false, bsIn);
         }
 
+        public override void OnOutTime(FT_Session session)
+        {
+            
+        }
     }
 
     class FT_Node_Process_Debug : FT_ConnectProcessResultHandler{
@@ -52,6 +56,10 @@ namespace Client
 
             Console.ReadKey();
 
+            _SendUnitData();
+
+            Console.ReadKey();
+
             client.Dispose();
         }
 
@@ -64,6 +72,16 @@ namespace Client
             processTest1 = new FT_Node_Process_Test1();
             nodePlugin.RegisterProcess(processTest1);
             client.AttachInterface2(nodePlugin);
+        }
+
+        static void _SendUnitData (){
+            FT_UnitData data = new FT_UnitData();
+
+            BitStream writeBitStream = new BitStream();
+            writeBitStream.Write((byte)FT_MessageTypes.ID_SERVER_LOGIN);
+            writeBitStream.Write((byte)FT_MessageTypesNode.NODE_FT_TEST1);
+            data.Serialize(true, writeBitStream);
+            client.Send(writeBitStream, (char)0);
         }
 
         static void _Connect2()

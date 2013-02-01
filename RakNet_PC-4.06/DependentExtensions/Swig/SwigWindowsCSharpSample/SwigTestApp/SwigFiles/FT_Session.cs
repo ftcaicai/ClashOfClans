@@ -74,6 +74,10 @@ public class FT_Session : IDisposable {
     if (RakNetPINVOKE.SWIGPendingException.Pending) throw RakNetPINVOKE.SWIGPendingException.Retrieve();
   }
 
+  public virtual void Serialize(bool writeToBitstream, BitStream bs) {
+    RakNetPINVOKE.FT_Session_Serialize(swigCPtr, writeToBitstream, BitStream.getCPtr(bs));
+  }
+
   public bool Equals(FT_Session c) {
     bool ret = RakNetPINVOKE.FT_Session_Equals(swigCPtr, FT_Session.getCPtr(c));
     if (RakNetPINVOKE.SWIGPendingException.Pending) throw RakNetPINVOKE.SWIGPendingException.Retrieve();

@@ -176,8 +176,8 @@ public:
     SwigDirector_FT_Node_Process();
     virtual ~SwigDirector_FT_Node_Process();
     virtual FT_MessageTypesNode GetNodeType();
-    virtual void OnProcess(FT_Session const session, RakNet::BitStream *bsIn, RakNet::AddressOrGUID const systemIdentifier);
-    virtual void OnOutTime(FT_Session const session);
+    virtual void OnProcess(FT_Session session, RakNet::BitStream *bsIn, RakNet::AddressOrGUID const systemIdentifier);
+    virtual void OnOutTime(FT_Session session);
 
     typedef int (SWIGSTDCALL* SWIG_Callback0_t)();
     typedef void (SWIGSTDCALL* SWIG_Callback1_t)(void *, void *, void *);

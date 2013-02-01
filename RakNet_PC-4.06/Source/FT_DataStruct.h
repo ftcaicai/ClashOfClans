@@ -37,6 +37,8 @@ namespace RakNet{
 		FT_Session (RakNet::RakNetGUID	g);
 		virtual ~FT_Session ();
 
+		virtual void Serialize (bool writeToBitstream, RakNet::BitStream* bs);
+
 		bool operator==(const FT_Session &c);
 	};
 

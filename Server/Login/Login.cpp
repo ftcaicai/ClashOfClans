@@ -142,6 +142,8 @@ void RakNetMessageTestInit (RakPeerInterface *peer){
 	FT_Node_Plugin* test = FT_Node_Plugin::GetInstance();
 	FT_Node_Process* processa = Test_ProcessA::GetInstance();
 	test->RegisterProcess(processa);
+	FT_Node_Process* processb = Test_ProcessB::GetInstance();
+	test->RegisterProcess(processb);
 	peer->AttachPlugin(test);
 }
 

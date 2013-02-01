@@ -60,8 +60,14 @@ public class FT_Node_Process : IDisposable {
     return ret;
   }
 
-  public virtual void OnProcess(BitStream bsIn) {
-    if (SwigDerivedClassHasMethod("OnProcess", swigMethodTypes1)) RakNetPINVOKE.FT_Node_Process_OnProcessSwigExplicitFT_Node_Process(swigCPtr, BitStream.getCPtr(bsIn)); else RakNetPINVOKE.FT_Node_Process_OnProcess(swigCPtr, BitStream.getCPtr(bsIn));
+  public virtual void OnProcess(FT_Session session, BitStream bsIn, AddressOrGUID systemIdentifier) {
+    if (SwigDerivedClassHasMethod("OnProcess", swigMethodTypes1)) RakNetPINVOKE.FT_Node_Process_OnProcessSwigExplicitFT_Node_Process(swigCPtr, FT_Session.getCPtr(session), BitStream.getCPtr(bsIn), AddressOrGUID.getCPtr(systemIdentifier)); else RakNetPINVOKE.FT_Node_Process_OnProcess(swigCPtr, FT_Session.getCPtr(session), BitStream.getCPtr(bsIn), AddressOrGUID.getCPtr(systemIdentifier));
+    if (RakNetPINVOKE.SWIGPendingException.Pending) throw RakNetPINVOKE.SWIGPendingException.Retrieve();
+  }
+
+  public virtual void OnOutTime(FT_Session session) {
+    if (SwigDerivedClassHasMethod("OnOutTime", swigMethodTypes2)) RakNetPINVOKE.FT_Node_Process_OnOutTimeSwigExplicitFT_Node_Process(swigCPtr, FT_Session.getCPtr(session)); else RakNetPINVOKE.FT_Node_Process_OnOutTime(swigCPtr, FT_Session.getCPtr(session));
+    if (RakNetPINVOKE.SWIGPendingException.Pending) throw RakNetPINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetRakPeerInterface(RakPeerInterface ptr) {
@@ -73,7 +79,9 @@ public class FT_Node_Process : IDisposable {
       swigDelegate0 = new SwigDelegateFT_Node_Process_0(SwigDirectorGetNodeType);
     if (SwigDerivedClassHasMethod("OnProcess", swigMethodTypes1))
       swigDelegate1 = new SwigDelegateFT_Node_Process_1(SwigDirectorOnProcess);
-    RakNetPINVOKE.FT_Node_Process_director_connect(swigCPtr, swigDelegate0, swigDelegate1);
+    if (SwigDerivedClassHasMethod("OnOutTime", swigMethodTypes2))
+      swigDelegate2 = new SwigDelegateFT_Node_Process_2(SwigDirectorOnOutTime);
+    RakNetPINVOKE.FT_Node_Process_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2);
   }
 
   private bool SwigDerivedClassHasMethod(string methodName, Type[] methodTypes) {
@@ -86,18 +94,25 @@ public class FT_Node_Process : IDisposable {
     return (int)GetNodeType();
   }
 
-  private void SwigDirectorOnProcess(IntPtr bsIn) {
-    OnProcess((bsIn == IntPtr.Zero) ? null : new BitStream(bsIn, false));
+  private void SwigDirectorOnProcess(IntPtr session, IntPtr bsIn, IntPtr systemIdentifier) {
+    OnProcess(new FT_Session(session, false), (bsIn == IntPtr.Zero) ? null : new BitStream(bsIn, false), new AddressOrGUID(systemIdentifier, false));
+  }
+
+  private void SwigDirectorOnOutTime(IntPtr session) {
+    OnOutTime(new FT_Session(session, false));
   }
 
   public delegate int SwigDelegateFT_Node_Process_0();
-  public delegate void SwigDelegateFT_Node_Process_1(IntPtr bsIn);
+  public delegate void SwigDelegateFT_Node_Process_1(IntPtr session, IntPtr bsIn, IntPtr systemIdentifier);
+  public delegate void SwigDelegateFT_Node_Process_2(IntPtr session);
 
   private SwigDelegateFT_Node_Process_0 swigDelegate0;
   private SwigDelegateFT_Node_Process_1 swigDelegate1;
+  private SwigDelegateFT_Node_Process_2 swigDelegate2;
 
   private static Type[] swigMethodTypes0 = new Type[] {  };
-  private static Type[] swigMethodTypes1 = new Type[] { typeof(BitStream) };
+  private static Type[] swigMethodTypes1 = new Type[] { typeof(FT_Session), typeof(BitStream), typeof(AddressOrGUID) };
+  private static Type[] swigMethodTypes2 = new Type[] { typeof(FT_Session) };
 }
 
 }

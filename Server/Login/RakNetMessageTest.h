@@ -27,6 +27,19 @@ public:
 
 };
 
+class Test_ProcessB : public FT_Node_Process {
+public:
+	STATIC_FACTORY_DECLARATIONS(Test_ProcessB)
+
+		Test_ProcessB ();
+	virtual ~Test_ProcessB();
+
+	virtual FT_MessageTypesNode GetNodeType() { return NODE_FT_UNITDATA; }
+
+	virtual void OnProcess (const FT_Session session, BitStream* bsIn, const AddressOrGUID systemIdentifier);
+
+};
+
 #endif
 
 

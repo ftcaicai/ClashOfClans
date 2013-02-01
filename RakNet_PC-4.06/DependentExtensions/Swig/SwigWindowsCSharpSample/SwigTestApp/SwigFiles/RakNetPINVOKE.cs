@@ -4815,6 +4815,12 @@ class RakNetPINVOKE {
   [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Process_SetRakPeerInterface")]
   public static extern void FT_Node_Process_SetRakPeerInterface(HandleRef jarg1, HandleRef jarg2);
 
+  [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Process_SetNodePlugin")]
+  public static extern void FT_Node_Process_SetNodePlugin(HandleRef jarg1, HandleRef jarg2);
+
+  [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Process_Send")]
+  public static extern void FT_Node_Process_Send(HandleRef jarg1, HandleRef jarg2, HandleRef jarg3, HandleRef jarg4);
+
   [DllImport("RakNet", EntryPoint="CSharp_FT_Node_Process_director_connect")]
   public static extern void FT_Node_Process_director_connect(HandleRef jarg1, FT_Node_Process.SwigDelegateFT_Node_Process_0 delegate0, FT_Node_Process.SwigDelegateFT_Node_Process_1 delegate1, FT_Node_Process.SwigDelegateFT_Node_Process_2 delegate2);
 
@@ -4871,6 +4877,9 @@ class RakNetPINVOKE {
 
   [DllImport("RakNet", EntryPoint="CSharp_delete_FT_Session")]
   public static extern void delete_FT_Session(HandleRef jarg1);
+
+  [DllImport("RakNet", EntryPoint="CSharp_FT_Session_Serialize")]
+  public static extern void FT_Session_Serialize(HandleRef jarg1, bool jarg2, HandleRef jarg3);
 
   [DllImport("RakNet", EntryPoint="CSharp_FT_Session_Equals")]
   public static extern bool FT_Session_Equals(HandleRef jarg1, HandleRef jarg2);
